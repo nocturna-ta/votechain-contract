@@ -31,6 +31,7 @@ var (
 
 // VotechainCandidate is an auto generated low-level Go binding around an user-defined struct.
 type VotechainCandidate struct {
+	Id        string
 	Name      string
 	VoteCount *big.Int
 	IsActive  bool
@@ -55,7 +56,7 @@ type VotechainVoter struct {
 
 // VotechainMetaData contains all meta data concerning the Votechain contract.
 var VotechainMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressAlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BranchAlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BranchNotActive\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCandidate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyKpuAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyKpuBranch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnauthorizedVoter\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterAlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterNotRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotingNotActive\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"candidateId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"CandidateAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"candidateId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"name\":\"CandidateStatusChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"}],\"name\":\"KPUBranchDeactivated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"KPUBranchRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"candidateId\",\"type\":\"uint256\"}],\"name\":\"VoteCasted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"VoterRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"name\":\"VotingStatusChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"addCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"candidateCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"candidates\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"}],\"name\":\"deactivateKPUBranch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllCandidates\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Candidate[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllKPUBranches\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"internalType\":\"structVotechain.KPUBranch[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllVoter\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"}],\"name\":\"getBranchByAddress\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"internalType\":\"structVotechain.KPUBranch\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"candidateId\",\"type\":\"uint256\"}],\"name\":\"getCandidate\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Candidate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"}],\"name\":\"getVoterByAddress\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"}],\"name\":\"getVoterByNIK\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"getVoterByRegion\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"kpuAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"kpuBranchAddresses\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"kpuBranches\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"registerKPUBranch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"}],\"name\":\"registerVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"setKpuAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setVotingStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"candidateId\",\"type\":\"uint256\"}],\"name\":\"toggleCandidateActive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"candidateId\",\"type\":\"uint256\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"voterAddresses\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"voterNIKByAddress\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"voters\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"votingActive\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AddressAlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyVoted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BranchAlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BranchNotActive\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CandidateAlreadyExists\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCandidate\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyKpuAdmin\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OnlyKpuBranch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnauthorizedVoter\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterAlreadyRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VoterNotRegistered\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"VotingNotActive\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"CandidateAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"name\":\"CandidateStatusChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"}],\"name\":\"KPUBranchDeactivated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"KPUBranchRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"}],\"name\":\"VoteCasted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"VoterRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"name\":\"VotingStatusChanged\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"addCandidate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"candidateAddressesArray\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"id\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"candidates\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"id\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"}],\"name\":\"deactivateKPUBranch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllCandidates\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"id\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Candidate[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllKPUBranches\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"internalType\":\"structVotechain.KPUBranch[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllVoter\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"}],\"name\":\"getBranchByAddress\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"internalType\":\"structVotechain.KPUBranch\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"}],\"name\":\"getCandidate\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"id\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Candidate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"}],\"name\":\"getVoterByAddress\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"}],\"name\":\"getVoterByNIK\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"getVoterByRegion\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"internalType\":\"structVotechain.Voter[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"kpuAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"kpuBranchAddressesArray\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"kpuBranches\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isActive\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"branchAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"}],\"name\":\"registerKPUBranch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"}],\"name\":\"registerVoter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"setKpuAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setVotingStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"}],\"name\":\"toggleCandidateActive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"candidateId\",\"type\":\"string\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"voterAddressesArray\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"voterNIKByAddress\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"voters\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"nik\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"voterAddress\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"hasVoted\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"region\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isRegistered\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"votingActive\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // VotechainABI is the input ABI used to generate the binding from.
@@ -204,49 +205,20 @@ func (_Votechain *VotechainTransactorRaw) Transact(opts *bind.TransactOpts, meth
 	return _Votechain.Contract.contract.Transact(opts, method, params...)
 }
 
-// CandidateCount is a free data retrieval call binding the contract method 0xa9a981a3.
+// CandidateAddressesArray is a free data retrieval call binding the contract method 0x30503d06.
 //
-// Solidity: function candidateCount() view returns(uint256)
-func (_Votechain *VotechainCaller) CandidateCount(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Votechain.contract.Call(opts, &out, "candidateCount")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// CandidateCount is a free data retrieval call binding the contract method 0xa9a981a3.
-//
-// Solidity: function candidateCount() view returns(uint256)
-func (_Votechain *VotechainSession) CandidateCount() (*big.Int, error) {
-	return _Votechain.Contract.CandidateCount(&_Votechain.CallOpts)
-}
-
-// CandidateCount is a free data retrieval call binding the contract method 0xa9a981a3.
-//
-// Solidity: function candidateCount() view returns(uint256)
-func (_Votechain *VotechainCallerSession) CandidateCount() (*big.Int, error) {
-	return _Votechain.Contract.CandidateCount(&_Votechain.CallOpts)
-}
-
-// Candidates is a free data retrieval call binding the contract method 0x3477ee2e.
-//
-// Solidity: function candidates(uint256 ) view returns(string name, uint256 voteCount, bool isActive)
-func (_Votechain *VotechainCaller) Candidates(opts *bind.CallOpts, arg0 *big.Int) (struct {
+// Solidity: function candidateAddressesArray(uint256 ) view returns(string id, string name, uint256 voteCount, bool isActive)
+func (_Votechain *VotechainCaller) CandidateAddressesArray(opts *bind.CallOpts, arg0 *big.Int) (struct {
+	Id        string
 	Name      string
 	VoteCount *big.Int
 	IsActive  bool
 }, error) {
 	var out []interface{}
-	err := _Votechain.contract.Call(opts, &out, "candidates", arg0)
+	err := _Votechain.contract.Call(opts, &out, "candidateAddressesArray", arg0)
 
 	outstruct := new(struct {
+		Id        string
 		Name      string
 		VoteCount *big.Int
 		IsActive  bool
@@ -255,18 +227,75 @@ func (_Votechain *VotechainCaller) Candidates(opts *bind.CallOpts, arg0 *big.Int
 		return *outstruct, err
 	}
 
-	outstruct.Name = *abi.ConvertType(out[0], new(string)).(*string)
-	outstruct.VoteCount = *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
-	outstruct.IsActive = *abi.ConvertType(out[2], new(bool)).(*bool)
+	outstruct.Id = *abi.ConvertType(out[0], new(string)).(*string)
+	outstruct.Name = *abi.ConvertType(out[1], new(string)).(*string)
+	outstruct.VoteCount = *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
+	outstruct.IsActive = *abi.ConvertType(out[3], new(bool)).(*bool)
 
 	return *outstruct, err
 
 }
 
-// Candidates is a free data retrieval call binding the contract method 0x3477ee2e.
+// CandidateAddressesArray is a free data retrieval call binding the contract method 0x30503d06.
 //
-// Solidity: function candidates(uint256 ) view returns(string name, uint256 voteCount, bool isActive)
-func (_Votechain *VotechainSession) Candidates(arg0 *big.Int) (struct {
+// Solidity: function candidateAddressesArray(uint256 ) view returns(string id, string name, uint256 voteCount, bool isActive)
+func (_Votechain *VotechainSession) CandidateAddressesArray(arg0 *big.Int) (struct {
+	Id        string
+	Name      string
+	VoteCount *big.Int
+	IsActive  bool
+}, error) {
+	return _Votechain.Contract.CandidateAddressesArray(&_Votechain.CallOpts, arg0)
+}
+
+// CandidateAddressesArray is a free data retrieval call binding the contract method 0x30503d06.
+//
+// Solidity: function candidateAddressesArray(uint256 ) view returns(string id, string name, uint256 voteCount, bool isActive)
+func (_Votechain *VotechainCallerSession) CandidateAddressesArray(arg0 *big.Int) (struct {
+	Id        string
+	Name      string
+	VoteCount *big.Int
+	IsActive  bool
+}, error) {
+	return _Votechain.Contract.CandidateAddressesArray(&_Votechain.CallOpts, arg0)
+}
+
+// Candidates is a free data retrieval call binding the contract method 0xc5539cc2.
+//
+// Solidity: function candidates(string ) view returns(string id, string name, uint256 voteCount, bool isActive)
+func (_Votechain *VotechainCaller) Candidates(opts *bind.CallOpts, arg0 string) (struct {
+	Id        string
+	Name      string
+	VoteCount *big.Int
+	IsActive  bool
+}, error) {
+	var out []interface{}
+	err := _Votechain.contract.Call(opts, &out, "candidates", arg0)
+
+	outstruct := new(struct {
+		Id        string
+		Name      string
+		VoteCount *big.Int
+		IsActive  bool
+	})
+	if err != nil {
+		return *outstruct, err
+	}
+
+	outstruct.Id = *abi.ConvertType(out[0], new(string)).(*string)
+	outstruct.Name = *abi.ConvertType(out[1], new(string)).(*string)
+	outstruct.VoteCount = *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
+	outstruct.IsActive = *abi.ConvertType(out[3], new(bool)).(*bool)
+
+	return *outstruct, err
+
+}
+
+// Candidates is a free data retrieval call binding the contract method 0xc5539cc2.
+//
+// Solidity: function candidates(string ) view returns(string id, string name, uint256 voteCount, bool isActive)
+func (_Votechain *VotechainSession) Candidates(arg0 string) (struct {
+	Id        string
 	Name      string
 	VoteCount *big.Int
 	IsActive  bool
@@ -274,10 +303,11 @@ func (_Votechain *VotechainSession) Candidates(arg0 *big.Int) (struct {
 	return _Votechain.Contract.Candidates(&_Votechain.CallOpts, arg0)
 }
 
-// Candidates is a free data retrieval call binding the contract method 0x3477ee2e.
+// Candidates is a free data retrieval call binding the contract method 0xc5539cc2.
 //
-// Solidity: function candidates(uint256 ) view returns(string name, uint256 voteCount, bool isActive)
-func (_Votechain *VotechainCallerSession) Candidates(arg0 *big.Int) (struct {
+// Solidity: function candidates(string ) view returns(string id, string name, uint256 voteCount, bool isActive)
+func (_Votechain *VotechainCallerSession) Candidates(arg0 string) (struct {
+	Id        string
 	Name      string
 	VoteCount *big.Int
 	IsActive  bool
@@ -287,7 +317,7 @@ func (_Votechain *VotechainCallerSession) Candidates(arg0 *big.Int) (struct {
 
 // GetAllCandidates is a free data retrieval call binding the contract method 0x2e6997fe.
 //
-// Solidity: function getAllCandidates() view returns((string,uint256,bool)[])
+// Solidity: function getAllCandidates() view returns((string,string,uint256,bool)[])
 func (_Votechain *VotechainCaller) GetAllCandidates(opts *bind.CallOpts) ([]VotechainCandidate, error) {
 	var out []interface{}
 	err := _Votechain.contract.Call(opts, &out, "getAllCandidates")
@@ -304,14 +334,14 @@ func (_Votechain *VotechainCaller) GetAllCandidates(opts *bind.CallOpts) ([]Vote
 
 // GetAllCandidates is a free data retrieval call binding the contract method 0x2e6997fe.
 //
-// Solidity: function getAllCandidates() view returns((string,uint256,bool)[])
+// Solidity: function getAllCandidates() view returns((string,string,uint256,bool)[])
 func (_Votechain *VotechainSession) GetAllCandidates() ([]VotechainCandidate, error) {
 	return _Votechain.Contract.GetAllCandidates(&_Votechain.CallOpts)
 }
 
 // GetAllCandidates is a free data retrieval call binding the contract method 0x2e6997fe.
 //
-// Solidity: function getAllCandidates() view returns((string,uint256,bool)[])
+// Solidity: function getAllCandidates() view returns((string,string,uint256,bool)[])
 func (_Votechain *VotechainCallerSession) GetAllCandidates() ([]VotechainCandidate, error) {
 	return _Votechain.Contract.GetAllCandidates(&_Votechain.CallOpts)
 }
@@ -409,10 +439,10 @@ func (_Votechain *VotechainCallerSession) GetBranchByAddress(branchAddress commo
 	return _Votechain.Contract.GetBranchByAddress(&_Votechain.CallOpts, branchAddress)
 }
 
-// GetCandidate is a free data retrieval call binding the contract method 0x35b8e820.
+// GetCandidate is a free data retrieval call binding the contract method 0xf276669d.
 //
-// Solidity: function getCandidate(uint256 candidateId) view returns((string,uint256,bool))
-func (_Votechain *VotechainCaller) GetCandidate(opts *bind.CallOpts, candidateId *big.Int) (VotechainCandidate, error) {
+// Solidity: function getCandidate(string candidateId) view returns((string,string,uint256,bool))
+func (_Votechain *VotechainCaller) GetCandidate(opts *bind.CallOpts, candidateId string) (VotechainCandidate, error) {
 	var out []interface{}
 	err := _Votechain.contract.Call(opts, &out, "getCandidate", candidateId)
 
@@ -426,17 +456,17 @@ func (_Votechain *VotechainCaller) GetCandidate(opts *bind.CallOpts, candidateId
 
 }
 
-// GetCandidate is a free data retrieval call binding the contract method 0x35b8e820.
+// GetCandidate is a free data retrieval call binding the contract method 0xf276669d.
 //
-// Solidity: function getCandidate(uint256 candidateId) view returns((string,uint256,bool))
-func (_Votechain *VotechainSession) GetCandidate(candidateId *big.Int) (VotechainCandidate, error) {
+// Solidity: function getCandidate(string candidateId) view returns((string,string,uint256,bool))
+func (_Votechain *VotechainSession) GetCandidate(candidateId string) (VotechainCandidate, error) {
 	return _Votechain.Contract.GetCandidate(&_Votechain.CallOpts, candidateId)
 }
 
-// GetCandidate is a free data retrieval call binding the contract method 0x35b8e820.
+// GetCandidate is a free data retrieval call binding the contract method 0xf276669d.
 //
-// Solidity: function getCandidate(uint256 candidateId) view returns((string,uint256,bool))
-func (_Votechain *VotechainCallerSession) GetCandidate(candidateId *big.Int) (VotechainCandidate, error) {
+// Solidity: function getCandidate(string candidateId) view returns((string,string,uint256,bool))
+func (_Votechain *VotechainCallerSession) GetCandidate(candidateId string) (VotechainCandidate, error) {
 	return _Votechain.Contract.GetCandidate(&_Votechain.CallOpts, candidateId)
 }
 
@@ -564,17 +594,17 @@ func (_Votechain *VotechainCallerSession) KpuAdmin() (common.Address, error) {
 	return _Votechain.Contract.KpuAdmin(&_Votechain.CallOpts)
 }
 
-// KpuBranchAddresses is a free data retrieval call binding the contract method 0x04abffb5.
+// KpuBranchAddressesArray is a free data retrieval call binding the contract method 0xc7cb520a.
 //
-// Solidity: function kpuBranchAddresses(uint256 ) view returns(string name, address branchAddress, bool isActive, string region)
-func (_Votechain *VotechainCaller) KpuBranchAddresses(opts *bind.CallOpts, arg0 *big.Int) (struct {
+// Solidity: function kpuBranchAddressesArray(uint256 ) view returns(string name, address branchAddress, bool isActive, string region)
+func (_Votechain *VotechainCaller) KpuBranchAddressesArray(opts *bind.CallOpts, arg0 *big.Int) (struct {
 	Name          string
 	BranchAddress common.Address
 	IsActive      bool
 	Region        string
 }, error) {
 	var out []interface{}
-	err := _Votechain.contract.Call(opts, &out, "kpuBranchAddresses", arg0)
+	err := _Votechain.contract.Call(opts, &out, "kpuBranchAddressesArray", arg0)
 
 	outstruct := new(struct {
 		Name          string
@@ -595,28 +625,28 @@ func (_Votechain *VotechainCaller) KpuBranchAddresses(opts *bind.CallOpts, arg0 
 
 }
 
-// KpuBranchAddresses is a free data retrieval call binding the contract method 0x04abffb5.
+// KpuBranchAddressesArray is a free data retrieval call binding the contract method 0xc7cb520a.
 //
-// Solidity: function kpuBranchAddresses(uint256 ) view returns(string name, address branchAddress, bool isActive, string region)
-func (_Votechain *VotechainSession) KpuBranchAddresses(arg0 *big.Int) (struct {
+// Solidity: function kpuBranchAddressesArray(uint256 ) view returns(string name, address branchAddress, bool isActive, string region)
+func (_Votechain *VotechainSession) KpuBranchAddressesArray(arg0 *big.Int) (struct {
 	Name          string
 	BranchAddress common.Address
 	IsActive      bool
 	Region        string
 }, error) {
-	return _Votechain.Contract.KpuBranchAddresses(&_Votechain.CallOpts, arg0)
+	return _Votechain.Contract.KpuBranchAddressesArray(&_Votechain.CallOpts, arg0)
 }
 
-// KpuBranchAddresses is a free data retrieval call binding the contract method 0x04abffb5.
+// KpuBranchAddressesArray is a free data retrieval call binding the contract method 0xc7cb520a.
 //
-// Solidity: function kpuBranchAddresses(uint256 ) view returns(string name, address branchAddress, bool isActive, string region)
-func (_Votechain *VotechainCallerSession) KpuBranchAddresses(arg0 *big.Int) (struct {
+// Solidity: function kpuBranchAddressesArray(uint256 ) view returns(string name, address branchAddress, bool isActive, string region)
+func (_Votechain *VotechainCallerSession) KpuBranchAddressesArray(arg0 *big.Int) (struct {
 	Name          string
 	BranchAddress common.Address
 	IsActive      bool
 	Region        string
 }, error) {
-	return _Votechain.Contract.KpuBranchAddresses(&_Votechain.CallOpts, arg0)
+	return _Votechain.Contract.KpuBranchAddressesArray(&_Votechain.CallOpts, arg0)
 }
 
 // KpuBranches is a free data retrieval call binding the contract method 0xab165a3e.
@@ -674,10 +704,10 @@ func (_Votechain *VotechainCallerSession) KpuBranches(arg0 common.Address) (stru
 	return _Votechain.Contract.KpuBranches(&_Votechain.CallOpts, arg0)
 }
 
-// VoterAddresses is a free data retrieval call binding the contract method 0xdd0e2373.
+// VoterAddressesArray is a free data retrieval call binding the contract method 0x89c7e391.
 //
-// Solidity: function voterAddresses(uint256 ) view returns(string nik, address voterAddress, bool hasVoted, string region, bool isRegistered)
-func (_Votechain *VotechainCaller) VoterAddresses(opts *bind.CallOpts, arg0 *big.Int) (struct {
+// Solidity: function voterAddressesArray(uint256 ) view returns(string nik, address voterAddress, bool hasVoted, string region, bool isRegistered)
+func (_Votechain *VotechainCaller) VoterAddressesArray(opts *bind.CallOpts, arg0 *big.Int) (struct {
 	Nik          string
 	VoterAddress common.Address
 	HasVoted     bool
@@ -685,7 +715,7 @@ func (_Votechain *VotechainCaller) VoterAddresses(opts *bind.CallOpts, arg0 *big
 	IsRegistered bool
 }, error) {
 	var out []interface{}
-	err := _Votechain.contract.Call(opts, &out, "voterAddresses", arg0)
+	err := _Votechain.contract.Call(opts, &out, "voterAddressesArray", arg0)
 
 	outstruct := new(struct {
 		Nik          string
@@ -708,30 +738,30 @@ func (_Votechain *VotechainCaller) VoterAddresses(opts *bind.CallOpts, arg0 *big
 
 }
 
-// VoterAddresses is a free data retrieval call binding the contract method 0xdd0e2373.
+// VoterAddressesArray is a free data retrieval call binding the contract method 0x89c7e391.
 //
-// Solidity: function voterAddresses(uint256 ) view returns(string nik, address voterAddress, bool hasVoted, string region, bool isRegistered)
-func (_Votechain *VotechainSession) VoterAddresses(arg0 *big.Int) (struct {
+// Solidity: function voterAddressesArray(uint256 ) view returns(string nik, address voterAddress, bool hasVoted, string region, bool isRegistered)
+func (_Votechain *VotechainSession) VoterAddressesArray(arg0 *big.Int) (struct {
 	Nik          string
 	VoterAddress common.Address
 	HasVoted     bool
 	Region       string
 	IsRegistered bool
 }, error) {
-	return _Votechain.Contract.VoterAddresses(&_Votechain.CallOpts, arg0)
+	return _Votechain.Contract.VoterAddressesArray(&_Votechain.CallOpts, arg0)
 }
 
-// VoterAddresses is a free data retrieval call binding the contract method 0xdd0e2373.
+// VoterAddressesArray is a free data retrieval call binding the contract method 0x89c7e391.
 //
-// Solidity: function voterAddresses(uint256 ) view returns(string nik, address voterAddress, bool hasVoted, string region, bool isRegistered)
-func (_Votechain *VotechainCallerSession) VoterAddresses(arg0 *big.Int) (struct {
+// Solidity: function voterAddressesArray(uint256 ) view returns(string nik, address voterAddress, bool hasVoted, string region, bool isRegistered)
+func (_Votechain *VotechainCallerSession) VoterAddressesArray(arg0 *big.Int) (struct {
 	Nik          string
 	VoterAddress common.Address
 	HasVoted     bool
 	Region       string
 	IsRegistered bool
 }, error) {
-	return _Votechain.Contract.VoterAddresses(&_Votechain.CallOpts, arg0)
+	return _Votechain.Contract.VoterAddressesArray(&_Votechain.CallOpts, arg0)
 }
 
 // VoterNIKByAddress is a free data retrieval call binding the contract method 0xf0416e5f.
@@ -856,25 +886,25 @@ func (_Votechain *VotechainCallerSession) VotingActive() (bool, error) {
 	return _Votechain.Contract.VotingActive(&_Votechain.CallOpts)
 }
 
-// AddCandidate is a paid mutator transaction binding the contract method 0x462e91ec.
+// AddCandidate is a paid mutator transaction binding the contract method 0x26541b56.
 //
-// Solidity: function addCandidate(string name) returns()
-func (_Votechain *VotechainTransactor) AddCandidate(opts *bind.TransactOpts, name string) (*types.Transaction, error) {
-	return _Votechain.contract.Transact(opts, "addCandidate", name)
+// Solidity: function addCandidate(string candidateId, string name) returns()
+func (_Votechain *VotechainTransactor) AddCandidate(opts *bind.TransactOpts, candidateId string, name string) (*types.Transaction, error) {
+	return _Votechain.contract.Transact(opts, "addCandidate", candidateId, name)
 }
 
-// AddCandidate is a paid mutator transaction binding the contract method 0x462e91ec.
+// AddCandidate is a paid mutator transaction binding the contract method 0x26541b56.
 //
-// Solidity: function addCandidate(string name) returns()
-func (_Votechain *VotechainSession) AddCandidate(name string) (*types.Transaction, error) {
-	return _Votechain.Contract.AddCandidate(&_Votechain.TransactOpts, name)
+// Solidity: function addCandidate(string candidateId, string name) returns()
+func (_Votechain *VotechainSession) AddCandidate(candidateId string, name string) (*types.Transaction, error) {
+	return _Votechain.Contract.AddCandidate(&_Votechain.TransactOpts, candidateId, name)
 }
 
-// AddCandidate is a paid mutator transaction binding the contract method 0x462e91ec.
+// AddCandidate is a paid mutator transaction binding the contract method 0x26541b56.
 //
-// Solidity: function addCandidate(string name) returns()
-func (_Votechain *VotechainTransactorSession) AddCandidate(name string) (*types.Transaction, error) {
-	return _Votechain.Contract.AddCandidate(&_Votechain.TransactOpts, name)
+// Solidity: function addCandidate(string candidateId, string name) returns()
+func (_Votechain *VotechainTransactorSession) AddCandidate(candidateId string, name string) (*types.Transaction, error) {
+	return _Votechain.Contract.AddCandidate(&_Votechain.TransactOpts, candidateId, name)
 }
 
 // DeactivateKPUBranch is a paid mutator transaction binding the contract method 0x4c361435.
@@ -982,45 +1012,45 @@ func (_Votechain *VotechainTransactorSession) SetVotingStatus(status bool) (*typ
 	return _Votechain.Contract.SetVotingStatus(&_Votechain.TransactOpts, status)
 }
 
-// ToggleCandidateActive is a paid mutator transaction binding the contract method 0xb07bab99.
+// ToggleCandidateActive is a paid mutator transaction binding the contract method 0x1999a15f.
 //
-// Solidity: function toggleCandidateActive(uint256 candidateId) returns()
-func (_Votechain *VotechainTransactor) ToggleCandidateActive(opts *bind.TransactOpts, candidateId *big.Int) (*types.Transaction, error) {
+// Solidity: function toggleCandidateActive(string candidateId) returns()
+func (_Votechain *VotechainTransactor) ToggleCandidateActive(opts *bind.TransactOpts, candidateId string) (*types.Transaction, error) {
 	return _Votechain.contract.Transact(opts, "toggleCandidateActive", candidateId)
 }
 
-// ToggleCandidateActive is a paid mutator transaction binding the contract method 0xb07bab99.
+// ToggleCandidateActive is a paid mutator transaction binding the contract method 0x1999a15f.
 //
-// Solidity: function toggleCandidateActive(uint256 candidateId) returns()
-func (_Votechain *VotechainSession) ToggleCandidateActive(candidateId *big.Int) (*types.Transaction, error) {
+// Solidity: function toggleCandidateActive(string candidateId) returns()
+func (_Votechain *VotechainSession) ToggleCandidateActive(candidateId string) (*types.Transaction, error) {
 	return _Votechain.Contract.ToggleCandidateActive(&_Votechain.TransactOpts, candidateId)
 }
 
-// ToggleCandidateActive is a paid mutator transaction binding the contract method 0xb07bab99.
+// ToggleCandidateActive is a paid mutator transaction binding the contract method 0x1999a15f.
 //
-// Solidity: function toggleCandidateActive(uint256 candidateId) returns()
-func (_Votechain *VotechainTransactorSession) ToggleCandidateActive(candidateId *big.Int) (*types.Transaction, error) {
+// Solidity: function toggleCandidateActive(string candidateId) returns()
+func (_Votechain *VotechainTransactorSession) ToggleCandidateActive(candidateId string) (*types.Transaction, error) {
 	return _Votechain.Contract.ToggleCandidateActive(&_Votechain.TransactOpts, candidateId)
 }
 
-// Vote is a paid mutator transaction binding the contract method 0x0121b93f.
+// Vote is a paid mutator transaction binding the contract method 0xfc36e15b.
 //
-// Solidity: function vote(uint256 candidateId) returns()
-func (_Votechain *VotechainTransactor) Vote(opts *bind.TransactOpts, candidateId *big.Int) (*types.Transaction, error) {
+// Solidity: function vote(string candidateId) returns()
+func (_Votechain *VotechainTransactor) Vote(opts *bind.TransactOpts, candidateId string) (*types.Transaction, error) {
 	return _Votechain.contract.Transact(opts, "vote", candidateId)
 }
 
-// Vote is a paid mutator transaction binding the contract method 0x0121b93f.
+// Vote is a paid mutator transaction binding the contract method 0xfc36e15b.
 //
-// Solidity: function vote(uint256 candidateId) returns()
-func (_Votechain *VotechainSession) Vote(candidateId *big.Int) (*types.Transaction, error) {
+// Solidity: function vote(string candidateId) returns()
+func (_Votechain *VotechainSession) Vote(candidateId string) (*types.Transaction, error) {
 	return _Votechain.Contract.Vote(&_Votechain.TransactOpts, candidateId)
 }
 
-// Vote is a paid mutator transaction binding the contract method 0x0121b93f.
+// Vote is a paid mutator transaction binding the contract method 0xfc36e15b.
 //
-// Solidity: function vote(uint256 candidateId) returns()
-func (_Votechain *VotechainTransactorSession) Vote(candidateId *big.Int) (*types.Transaction, error) {
+// Solidity: function vote(string candidateId) returns()
+func (_Votechain *VotechainTransactorSession) Vote(candidateId string) (*types.Transaction, error) {
 	return _Votechain.Contract.Vote(&_Votechain.TransactOpts, candidateId)
 }
 
@@ -1093,15 +1123,15 @@ func (it *VotechainCandidateAddedIterator) Close() error {
 
 // VotechainCandidateAdded represents a CandidateAdded event raised by the Votechain contract.
 type VotechainCandidateAdded struct {
-	CandidateId *big.Int
+	CandidateId common.Hash
 	Name        string
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
-// FilterCandidateAdded is a free log retrieval operation binding the contract event 0xe83b2a43e7e82d975c8a0a6d2f045153c869e111136a34d1889ab7b598e396a3.
+// FilterCandidateAdded is a free log retrieval operation binding the contract event 0x6184463fde61a3e60869da6c5a223163f4b7548f805e17f865da2e8d3828d337.
 //
-// Solidity: event CandidateAdded(uint256 indexed candidateId, string name)
-func (_Votechain *VotechainFilterer) FilterCandidateAdded(opts *bind.FilterOpts, candidateId []*big.Int) (*VotechainCandidateAddedIterator, error) {
+// Solidity: event CandidateAdded(string indexed candidateId, string name)
+func (_Votechain *VotechainFilterer) FilterCandidateAdded(opts *bind.FilterOpts, candidateId []string) (*VotechainCandidateAddedIterator, error) {
 
 	var candidateIdRule []interface{}
 	for _, candidateIdItem := range candidateId {
@@ -1115,10 +1145,10 @@ func (_Votechain *VotechainFilterer) FilterCandidateAdded(opts *bind.FilterOpts,
 	return &VotechainCandidateAddedIterator{contract: _Votechain.contract, event: "CandidateAdded", logs: logs, sub: sub}, nil
 }
 
-// WatchCandidateAdded is a free log subscription operation binding the contract event 0xe83b2a43e7e82d975c8a0a6d2f045153c869e111136a34d1889ab7b598e396a3.
+// WatchCandidateAdded is a free log subscription operation binding the contract event 0x6184463fde61a3e60869da6c5a223163f4b7548f805e17f865da2e8d3828d337.
 //
-// Solidity: event CandidateAdded(uint256 indexed candidateId, string name)
-func (_Votechain *VotechainFilterer) WatchCandidateAdded(opts *bind.WatchOpts, sink chan<- *VotechainCandidateAdded, candidateId []*big.Int) (event.Subscription, error) {
+// Solidity: event CandidateAdded(string indexed candidateId, string name)
+func (_Votechain *VotechainFilterer) WatchCandidateAdded(opts *bind.WatchOpts, sink chan<- *VotechainCandidateAdded, candidateId []string) (event.Subscription, error) {
 
 	var candidateIdRule []interface{}
 	for _, candidateIdItem := range candidateId {
@@ -1157,9 +1187,9 @@ func (_Votechain *VotechainFilterer) WatchCandidateAdded(opts *bind.WatchOpts, s
 	}), nil
 }
 
-// ParseCandidateAdded is a log parse operation binding the contract event 0xe83b2a43e7e82d975c8a0a6d2f045153c869e111136a34d1889ab7b598e396a3.
+// ParseCandidateAdded is a log parse operation binding the contract event 0x6184463fde61a3e60869da6c5a223163f4b7548f805e17f865da2e8d3828d337.
 //
-// Solidity: event CandidateAdded(uint256 indexed candidateId, string name)
+// Solidity: event CandidateAdded(string indexed candidateId, string name)
 func (_Votechain *VotechainFilterer) ParseCandidateAdded(log types.Log) (*VotechainCandidateAdded, error) {
 	event := new(VotechainCandidateAdded)
 	if err := _Votechain.contract.UnpackLog(event, "CandidateAdded", log); err != nil {
@@ -1238,15 +1268,15 @@ func (it *VotechainCandidateStatusChangedIterator) Close() error {
 
 // VotechainCandidateStatusChanged represents a CandidateStatusChanged event raised by the Votechain contract.
 type VotechainCandidateStatusChanged struct {
-	CandidateId *big.Int
+	CandidateId common.Hash
 	IsActive    bool
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
-// FilterCandidateStatusChanged is a free log retrieval operation binding the contract event 0x07a9fd7fc1368910c1b62e58319c10b4ba034e9e4d58aa2ef36e9283fc2c5f97.
+// FilterCandidateStatusChanged is a free log retrieval operation binding the contract event 0x24a689d3938ff739c48065a7730e43e7433e0e64398d1a1cc828e7ab82913ff7.
 //
-// Solidity: event CandidateStatusChanged(uint256 indexed candidateId, bool isActive)
-func (_Votechain *VotechainFilterer) FilterCandidateStatusChanged(opts *bind.FilterOpts, candidateId []*big.Int) (*VotechainCandidateStatusChangedIterator, error) {
+// Solidity: event CandidateStatusChanged(string indexed candidateId, bool isActive)
+func (_Votechain *VotechainFilterer) FilterCandidateStatusChanged(opts *bind.FilterOpts, candidateId []string) (*VotechainCandidateStatusChangedIterator, error) {
 
 	var candidateIdRule []interface{}
 	for _, candidateIdItem := range candidateId {
@@ -1260,10 +1290,10 @@ func (_Votechain *VotechainFilterer) FilterCandidateStatusChanged(opts *bind.Fil
 	return &VotechainCandidateStatusChangedIterator{contract: _Votechain.contract, event: "CandidateStatusChanged", logs: logs, sub: sub}, nil
 }
 
-// WatchCandidateStatusChanged is a free log subscription operation binding the contract event 0x07a9fd7fc1368910c1b62e58319c10b4ba034e9e4d58aa2ef36e9283fc2c5f97.
+// WatchCandidateStatusChanged is a free log subscription operation binding the contract event 0x24a689d3938ff739c48065a7730e43e7433e0e64398d1a1cc828e7ab82913ff7.
 //
-// Solidity: event CandidateStatusChanged(uint256 indexed candidateId, bool isActive)
-func (_Votechain *VotechainFilterer) WatchCandidateStatusChanged(opts *bind.WatchOpts, sink chan<- *VotechainCandidateStatusChanged, candidateId []*big.Int) (event.Subscription, error) {
+// Solidity: event CandidateStatusChanged(string indexed candidateId, bool isActive)
+func (_Votechain *VotechainFilterer) WatchCandidateStatusChanged(opts *bind.WatchOpts, sink chan<- *VotechainCandidateStatusChanged, candidateId []string) (event.Subscription, error) {
 
 	var candidateIdRule []interface{}
 	for _, candidateIdItem := range candidateId {
@@ -1302,9 +1332,9 @@ func (_Votechain *VotechainFilterer) WatchCandidateStatusChanged(opts *bind.Watc
 	}), nil
 }
 
-// ParseCandidateStatusChanged is a log parse operation binding the contract event 0x07a9fd7fc1368910c1b62e58319c10b4ba034e9e4d58aa2ef36e9283fc2c5f97.
+// ParseCandidateStatusChanged is a log parse operation binding the contract event 0x24a689d3938ff739c48065a7730e43e7433e0e64398d1a1cc828e7ab82913ff7.
 //
-// Solidity: event CandidateStatusChanged(uint256 indexed candidateId, bool isActive)
+// Solidity: event CandidateStatusChanged(string indexed candidateId, bool isActive)
 func (_Votechain *VotechainFilterer) ParseCandidateStatusChanged(log types.Log) (*VotechainCandidateStatusChanged, error) {
 	event := new(VotechainCandidateStatusChanged)
 	if err := _Votechain.contract.UnpackLog(event, "CandidateStatusChanged", log); err != nil {
@@ -1674,14 +1704,14 @@ func (it *VotechainVoteCastedIterator) Close() error {
 // VotechainVoteCasted represents a VoteCasted event raised by the Votechain contract.
 type VotechainVoteCasted struct {
 	Nik         common.Hash
-	CandidateId *big.Int
+	CandidateId common.Hash
 	Raw         types.Log // Blockchain specific contextual infos
 }
 
-// FilterVoteCasted is a free log retrieval operation binding the contract event 0xfef5593509c07a56349ed6186376be2d0864f40445c320bd3ea7f81c5e1de00d.
+// FilterVoteCasted is a free log retrieval operation binding the contract event 0x791f7d5f0b0d6e798f239ccca607156ff12f293d6709379301dc1a27e5206181.
 //
-// Solidity: event VoteCasted(string indexed nik, uint256 indexed candidateId)
-func (_Votechain *VotechainFilterer) FilterVoteCasted(opts *bind.FilterOpts, nik []string, candidateId []*big.Int) (*VotechainVoteCastedIterator, error) {
+// Solidity: event VoteCasted(string indexed nik, string indexed candidateId)
+func (_Votechain *VotechainFilterer) FilterVoteCasted(opts *bind.FilterOpts, nik []string, candidateId []string) (*VotechainVoteCastedIterator, error) {
 
 	var nikRule []interface{}
 	for _, nikItem := range nik {
@@ -1699,10 +1729,10 @@ func (_Votechain *VotechainFilterer) FilterVoteCasted(opts *bind.FilterOpts, nik
 	return &VotechainVoteCastedIterator{contract: _Votechain.contract, event: "VoteCasted", logs: logs, sub: sub}, nil
 }
 
-// WatchVoteCasted is a free log subscription operation binding the contract event 0xfef5593509c07a56349ed6186376be2d0864f40445c320bd3ea7f81c5e1de00d.
+// WatchVoteCasted is a free log subscription operation binding the contract event 0x791f7d5f0b0d6e798f239ccca607156ff12f293d6709379301dc1a27e5206181.
 //
-// Solidity: event VoteCasted(string indexed nik, uint256 indexed candidateId)
-func (_Votechain *VotechainFilterer) WatchVoteCasted(opts *bind.WatchOpts, sink chan<- *VotechainVoteCasted, nik []string, candidateId []*big.Int) (event.Subscription, error) {
+// Solidity: event VoteCasted(string indexed nik, string indexed candidateId)
+func (_Votechain *VotechainFilterer) WatchVoteCasted(opts *bind.WatchOpts, sink chan<- *VotechainVoteCasted, nik []string, candidateId []string) (event.Subscription, error) {
 
 	var nikRule []interface{}
 	for _, nikItem := range nik {
@@ -1745,9 +1775,9 @@ func (_Votechain *VotechainFilterer) WatchVoteCasted(opts *bind.WatchOpts, sink 
 	}), nil
 }
 
-// ParseVoteCasted is a log parse operation binding the contract event 0xfef5593509c07a56349ed6186376be2d0864f40445c320bd3ea7f81c5e1de00d.
+// ParseVoteCasted is a log parse operation binding the contract event 0x791f7d5f0b0d6e798f239ccca607156ff12f293d6709379301dc1a27e5206181.
 //
-// Solidity: event VoteCasted(string indexed nik, uint256 indexed candidateId)
+// Solidity: event VoteCasted(string indexed nik, string indexed candidateId)
 func (_Votechain *VotechainFilterer) ParseVoteCasted(log types.Log) (*VotechainVoteCasted, error) {
 	event := new(VotechainVoteCasted)
 	if err := _Votechain.contract.UnpackLog(event, "VoteCasted", log); err != nil {

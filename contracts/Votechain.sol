@@ -13,6 +13,7 @@ contract Votechain {
     error AlreadyVoted();
     error InvalidCandidate();
     error UnauthorizedVoter();
+    error CandidateAlreadyExists();
 
     struct KPUBranch {
         string name;
@@ -30,6 +31,7 @@ contract Votechain {
     }
 
     struct Candidate {
+        string id; // UUID as a string
         string name;
         uint256 voteCount;
         bool isActive;
@@ -37,22 +39,22 @@ contract Votechain {
 
     address public kpuAdmin;
     bool public votingActive;
-    uint256 public candidateCount;
 
+    mapping(string => Candidate) public candidates; // Mapping from UUID to Candidate
     mapping(address => KPUBranch) public kpuBranches;
-    mapping(string => Voter) public voters;
-    mapping(uint256 => Candidate) public candidates;
     mapping(address => string) public voterNIKByAddress;
+    mapping(string => Voter) public voters;
 
-    KPUBranch[] public kpuBranchAddresses;
-    Voter[] public voterAddresses;
+    KPUBranch[] public kpuBranchAddressesArray;
+    Voter[] public voterAddressesArray;
+    Candidate[] public candidateAddressesArray;
 
     event KPUBranchRegistered(address indexed branchAddress, string name, string region);
     event KPUBranchDeactivated(address indexed branchAddress);
     event VoterRegistered(string indexed nik, address indexed voterAddress, string region);
-    event VoteCasted(string indexed nik, uint256 indexed candidateId);
-    event CandidateAdded(uint256 indexed candidateId, string name);
-    event CandidateStatusChanged(uint256 indexed candidateId, bool isActive);
+    event VoteCasted(string indexed nik, string indexed candidateId);
+    event CandidateAdded(string indexed candidateId, string name);
+    event CandidateStatusChanged(string indexed candidateId, bool isActive);
     event VotingStatusChanged(bool isActive);
 
     modifier onlyKpuAdmin() {
@@ -81,16 +83,9 @@ contract Votechain {
     ) external onlyKpuAdmin {
         if (kpuBranches[branchAddress].isActive) revert BranchAlreadyRegistered();
 
-        kpuBranches[branchAddress] = KPUBranch(
-            name,
-            branchAddress,
-            true,
-            region
-        );
-
         KPUBranch memory newBranch = KPUBranch(name, branchAddress, true, region);
         kpuBranches[branchAddress] = newBranch;
-        kpuBranchAddresses.push(newBranch);
+        kpuBranchAddressesArray.push(newBranch);
 
         emit KPUBranchRegistered(branchAddress, name, region);
     }
@@ -117,18 +112,18 @@ contract Votechain {
 
         voters[nik] = newVoter;
         voterNIKByAddress[voterAddress] = nik;
-        voterAddresses.push(newVoter);
+        voterAddressesArray.push(newVoter);
 
         emit VoterRegistered(nik, voterAddress, kpuBranches[msg.sender].region);
     }
 
-    function vote(uint256 candidateId) external votingIsActive {
+    function vote(string calldata candidateId) external votingIsActive {
         string memory nik = voterNIKByAddress[msg.sender];
         if (bytes(nik).length == 0) revert VoterNotRegistered();
 
         Voter storage voter = voters[nik];
         if (voter.hasVoted) revert AlreadyVoted();
-        if (candidateId == 0 || candidateId > candidateCount || !candidates[candidateId].isActive)
+        if (bytes(candidates[candidateId].id).length == 0 || !candidates[candidateId].isActive)
             revert InvalidCandidate();
 
         voter.hasVoted = true;
@@ -137,14 +132,23 @@ contract Votechain {
         emit VoteCasted(nik, candidateId);
     }
 
-    function addCandidate(string calldata name) external onlyKpuAdmin {
-        candidateCount++;
-        candidates[candidateCount] = Candidate(name, 0, true);
-        emit CandidateAdded(candidateCount, name);
+    function addCandidate(string calldata candidateId, string calldata name) external onlyKpuAdmin {
+        if (bytes(candidates[candidateId].id).length != 0) revert CandidateAlreadyExists();
+
+        Candidate memory newCandidate = Candidate({
+            id: candidateId,
+            name: name,
+            voteCount: 0,
+            isActive: true
+        });
+        candidates[candidateId] = newCandidate;
+        candidateAddressesArray.push(newCandidate);
+
+        emit CandidateAdded(candidateId, name);
     }
 
-    function toggleCandidateActive(uint256 candidateId) external onlyKpuAdmin {
-        if (candidateId == 0 || candidateId > candidateCount) revert InvalidCandidate();
+    function toggleCandidateActive(string calldata candidateId) external onlyKpuAdmin {
+        if (bytes(candidates[candidateId].id).length == 0) revert InvalidCandidate();
         candidates[candidateId].isActive = !candidates[candidateId].isActive;
         emit CandidateStatusChanged(candidateId, candidates[candidateId].isActive);
     }
@@ -159,7 +163,7 @@ contract Votechain {
     }
 
     function getAllKPUBranches() external view returns (KPUBranch[] memory) {
-        return kpuBranchAddresses;
+        return kpuBranchAddressesArray;
     }
 
     function getBranchByAddress(address branchAddress) external view returns (KPUBranch memory) {
@@ -168,7 +172,7 @@ contract Votechain {
     }
 
     function getAllVoter() external view returns (Voter[] memory) {
-        return voterAddresses;
+        return voterAddressesArray;
     }
 
     function getVoterByNIK(string calldata nik) external view returns (Voter memory) {
@@ -183,33 +187,29 @@ contract Votechain {
 
     function getVoterByRegion(string calldata region) external view returns (Voter[] memory) {
         uint256 count;
-        for (uint256 i = 0; i < voterAddresses.length; i++) {
-            if (keccak256(bytes(voterAddresses[i].region)) == keccak256(bytes(region))) {
+        for (uint256 i = 0; i < voterAddressesArray.length; i++) {
+            if (keccak256(bytes(voterAddressesArray[i].region)) == keccak256(bytes(region))) {
                 count++;
             }
         }
 
         Voter[] memory regionVoters = new Voter[](count);
         uint256 index;
-        for (uint256 i = 0; i < voterAddresses.length; i++) {
-            if (keccak256(bytes(voterAddresses[i].region)) == keccak256(bytes(region))) {
-                regionVoters[index] = voterAddresses[i];
+        for (uint256 i = 0; i < voterAddressesArray.length; i++) {
+            if (keccak256(bytes(voterAddressesArray[i].region)) == keccak256(bytes(region))) {
+                regionVoters[index] = voterAddressesArray[i];
                 index++;
             }
         }
         return regionVoters;
     }
 
-    function getCandidate(uint256 candidateId) external view returns (Candidate memory) {
-        if (candidateId == 0 || candidateId > candidateCount) revert InvalidCandidate();
+    function getCandidate(string calldata candidateId) external view returns (Candidate memory) {
+        if (bytes(candidates[candidateId].id).length == 0) revert InvalidCandidate();
         return candidates[candidateId];
     }
 
     function getAllCandidates() external view returns (Candidate[] memory) {
-        Candidate[] memory allCandidates = new Candidate[](candidateCount);
-        for (uint256 i = 1; i <= candidateCount; i++) {
-            allCandidates[i-1] = candidates[i];
-        }
-        return allCandidates;
+        return candidateAddressesArray;
     }
 }
