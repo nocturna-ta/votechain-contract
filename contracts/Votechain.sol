@@ -33,6 +33,7 @@ contract Votechain {
     struct Candidate {
         string id; // UUID as a string
         string name;
+        uint candidateNo;
         uint256 voteCount;
         bool isActive;
     }
@@ -132,12 +133,13 @@ contract Votechain {
         emit VoteCasted(nik, candidateId);
     }
 
-    function addCandidate(string calldata candidateId, string calldata name) external onlyKpuAdmin {
+    function addCandidate(string calldata candidateId, string calldata name, uint candidateNo) external onlyKpuAdmin {
         if (bytes(candidates[candidateId].id).length != 0) revert CandidateAlreadyExists();
 
         Candidate memory newCandidate = Candidate({
             id: candidateId,
             name: name,
+            candidateNo: candidateNo,
             voteCount: 0,
             isActive: true
         });
@@ -212,4 +214,14 @@ contract Votechain {
     function getAllCandidates() external view returns (Candidate[] memory) {
         return candidateAddressesArray;
     }
+
+    function getCandidateByNo(uint candidateNo) external view returns (Candidate memory) {
+        for (uint i = 0; i < candidateAddressesArray.length; i++) {
+            if (candidateAddressesArray[i].candidateNo == candidateNo) {
+                return candidateAddressesArray[i];
+            }
+        }
+        revert InvalidCandidate();
+    }
+
 }
