@@ -31,7 +31,7 @@ contract Votechain {
     }
 
     struct Candidate {
-        string id; // UUID as a string
+        string id;
         string name;
         string candidateNo;
         uint256 voteCount;
@@ -41,7 +41,7 @@ contract Votechain {
     address public kpuAdmin;
     bool public votingActive;
 
-    mapping(string => Candidate) public candidates; // Mapping from UUID to Candidate
+    mapping(string => Candidate) public candidates;
     mapping(address => KPUBranch) public kpuBranches;
     mapping(address => string) public voterNIKByAddress;
     mapping(string => Voter) public voters;
@@ -134,8 +134,6 @@ contract Votechain {
     }
 
     function addCandidate(string calldata candidateId, string calldata name, string calldata candidateNo) external onlyKpuAdmin {
-        if (bytes(candidates[candidateId].id).length != 0) revert CandidateAlreadyExists();
-
         Candidate memory newCandidate = Candidate({
             id: candidateId,
             name: name,
