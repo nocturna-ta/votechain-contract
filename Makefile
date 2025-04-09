@@ -19,9 +19,10 @@ change-abi:
 
 generate-mock:
 	@echo ">> Generating Mocks"
-		mockery --dir=./interfaces --name=IVotechainCaller --output=./mocks --outpkg=mocks --filename=votechain_caller_mock.go
-		mockery --dir=./interfaces --name=IVotechainTransactor --output=./mocks --outpkg=mocks --filename=votechain_transactor_mock.go
-		mockery --dir=./interfaces --name=IVotechainFilterer --output=./mocks --outpkg=mocks --filename=votechain_filterer_mock.go
-		mockery --dir=./interfaces --name=IVotechain --output=./mocks --outpkg=mocks --filename=votechain_mock.go
+		mockery --dir=./interfaces --name=ElectionManagerInterface --output=./mocks --outpkg=mocks
+		mockery --dir=./interfaces --name=VotechainBaseInterface --output=./mocks --outpkg=mocks
+		mockery --dir=./interfaces --name=KpuManagerInterface --output=./mocks --outpkg=mocks
+		mockery --dir=./interfaces --name=VoterManagerInterface --output=./mocks --outpkg=mocks
+		mockery --dir=./interfaces --name=VotechainInterface --output=./mocks --outpkg=mocks
 
 
