@@ -32,6 +32,10 @@ interface IKPUManager {
     function isKPUKota(address kpuAddress) external view returns (bool);
     function isKPUProvinsi(address kpuAddress) external view returns (bool);
     function getKpuKotaRegion(address kpuAddress) external view returns (string memory);
+    function getAllKPUProvinsi() external view returns (KPUProvinsi[] memory);
+    function getAllKPUKota() external view returns (KPUKota[] memory);
+    function getKpuProvinsiByAddress(address Address) external view returns (KPUProvinsi memory);
+    function getKpuKotaByAddress(address Address) external view returns (KPUKota memory);
 }
 
 interface IVoterManager {
@@ -47,6 +51,9 @@ interface IVoterManager {
     function markVoted(address voterAddress) external returns (bool);
     function getVoterByAddress(address voterAddress) external view returns (Voter memory);
     function getVoterNikByAddress(address voterAddress) external view returns (string memory);
+    function getAllVoter() external view returns (Voter[] memory);
+    function getVoterByNIK(string calldata nik) external view returns (Voter memory);
+    function getVoterByRegion(string calldata region) external view returns (Voter[] memory);
 }
 
 interface IElectionManager {
@@ -62,4 +69,6 @@ interface IElectionManager {
     function toggleElectionActive(string calldata electionId) external;
     function vote(string calldata electionId, string memory voterNik) external;
     function getElection(string calldata electionId) external view returns (Election memory);
+    function getAllElection() external view returns (Election[] memory);
+    function getElectionByNo(string calldata electionNo) external view returns (Election memory);
 }

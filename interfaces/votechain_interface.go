@@ -5,6 +5,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/nocturna-ta/votechain-contract/binding/electionManager"
+	"github.com/nocturna-ta/votechain-contract/binding/kpuManager"
 	"github.com/nocturna-ta/votechain-contract/binding/voterManager"
 )
 
@@ -15,6 +16,7 @@ type ElectionManagerInterface interface {
 	AddElection(opts *bind.TransactOpts, electionId string, electionName string, electionNo string) (*types.Transaction, error)
 	ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error)
 	Vote(opts *bind.TransactOpts, electionId string, voterNik string) (*types.Transaction, error)
+	GetElectionByNo(opts *bind.CallOpts, electionNo string) (electionManager.IElectionManagerElection, error)
 }
 
 type VotechainBaseInterface interface {
@@ -30,6 +32,14 @@ type KpuManagerInterface interface {
 	GetKpuKotaRegion(opts *bind.CallOpts, kpuAddress common.Address) (string, error)
 	RegisterKPUKota(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error)
 	RegisterKPUProvinsi(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error)
+	DeactivateKPUKota(opts *bind.TransactOpts, Address common.Address) (*types.Transaction, error)
+	DeactivateKPUProvinsi(opts *bind.TransactOpts, Address common.Address) (*types.Transaction, error)
+	GetAllKPUKota(opts *bind.CallOpts) ([]kpuManager.IKPUManagerKPUKota, error)
+	GetAllKPUProvinsi(opts *bind.CallOpts) ([]kpuManager.IKPUManagerKPUProvinsi, error)
+	GetKpuKotaByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUKota, error)
+	GetKpuProvinsiByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUProvinsi, error)
+	KpuKota(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUKota, error)
+	KpuProvinsi(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUProvinsi, error)
 }
 
 type VoterManagerInterface interface {
@@ -37,6 +47,13 @@ type VoterManagerInterface interface {
 	GetVoterNikByAddress(opts *bind.CallOpts, voterAddress common.Address) (string, error)
 	RegisterVoter(opts *bind.TransactOpts, nik string, voterAddress common.Address) (*types.Transaction, error)
 	MarkVoted(opts *bind.TransactOpts, voterAddress common.Address) (*types.Transaction, error)
+	KpuManager(opts *bind.CallOpts) (common.Address, error)
+	VoterNIKByAddress(opts *bind.CallOpts, voter common.Address) (string, error)
+	VoterNIKByAddresses(opts *bind.CallOpts, arg0 common.Address) (string, error)
+	Voters(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error)
+	GetAllVoter(opts *bind.CallOpts) ([]voterManager.IVoterManagerVoter, error)
+	GetVoterByNIK(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error)
+	GetVoterByRegion(opts *bind.CallOpts, region string) ([]voterManager.IVoterManagerVoter, error)
 }
 
 type VotechainInterface interface {

@@ -18,6 +18,36 @@ type VoterManagerInterface struct {
 	mock.Mock
 }
 
+// GetAllVoter provides a mock function with given fields: opts
+func (_m *VoterManagerInterface) GetAllVoter(opts *bind.CallOpts) ([]voterManager.IVoterManagerVoter, error) {
+	ret := _m.Called(opts)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetAllVoter")
+	}
+
+	var r0 []voterManager.IVoterManagerVoter
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) ([]voterManager.IVoterManagerVoter, error)); ok {
+		return rf(opts)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) []voterManager.IVoterManagerVoter); ok {
+		r0 = rf(opts)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]voterManager.IVoterManagerVoter)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts) error); ok {
+		r1 = rf(opts)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // GetVoterByAddress provides a mock function with given fields: opts, voterAddress
 func (_m *VoterManagerInterface) GetVoterByAddress(opts *bind.CallOpts, voterAddress common.Address) (voterManager.IVoterManagerVoter, error) {
 	ret := _m.Called(opts, voterAddress)
@@ -46,6 +76,64 @@ func (_m *VoterManagerInterface) GetVoterByAddress(opts *bind.CallOpts, voterAdd
 	return r0, r1
 }
 
+// GetVoterByNIK provides a mock function with given fields: opts, nik
+func (_m *VoterManagerInterface) GetVoterByNIK(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error) {
+	ret := _m.Called(opts, nik)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetVoterByNIK")
+	}
+
+	var r0 voterManager.IVoterManagerVoter
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (voterManager.IVoterManagerVoter, error)); ok {
+		return rf(opts, nik)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) voterManager.IVoterManagerVoter); ok {
+		r0 = rf(opts, nik)
+	} else {
+		r0 = ret.Get(0).(voterManager.IVoterManagerVoter)
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
+		r1 = rf(opts, nik)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// GetVoterByRegion provides a mock function with given fields: opts, region
+func (_m *VoterManagerInterface) GetVoterByRegion(opts *bind.CallOpts, region string) ([]voterManager.IVoterManagerVoter, error) {
+	ret := _m.Called(opts, region)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetVoterByRegion")
+	}
+
+	var r0 []voterManager.IVoterManagerVoter
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) ([]voterManager.IVoterManagerVoter, error)); ok {
+		return rf(opts, region)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) []voterManager.IVoterManagerVoter); ok {
+		r0 = rf(opts, region)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]voterManager.IVoterManagerVoter)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
+		r1 = rf(opts, region)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // GetVoterNikByAddress provides a mock function with given fields: opts, voterAddress
 func (_m *VoterManagerInterface) GetVoterNikByAddress(opts *bind.CallOpts, voterAddress common.Address) (string, error) {
 	ret := _m.Called(opts, voterAddress)
@@ -67,6 +155,36 @@ func (_m *VoterManagerInterface) GetVoterNikByAddress(opts *bind.CallOpts, voter
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {
 		r1 = rf(opts, voterAddress)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// KpuManager provides a mock function with given fields: opts
+func (_m *VoterManagerInterface) KpuManager(opts *bind.CallOpts) (common.Address, error) {
+	ret := _m.Called(opts)
+
+	if len(ret) == 0 {
+		panic("no return value specified for KpuManager")
+	}
+
+	var r0 common.Address
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) (common.Address, error)); ok {
+		return rf(opts)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) common.Address); ok {
+		r0 = rf(opts)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(common.Address)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts) error); ok {
+		r1 = rf(opts)
 	} else {
 		r1 = ret.Error(1)
 	}
@@ -127,6 +245,90 @@ func (_m *VoterManagerInterface) RegisterVoter(opts *bind.TransactOpts, nik stri
 
 	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, string, common.Address) error); ok {
 		r1 = rf(opts, nik, voterAddress)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// VoterNIKByAddress provides a mock function with given fields: opts, voter
+func (_m *VoterManagerInterface) VoterNIKByAddress(opts *bind.CallOpts, voter common.Address) (string, error) {
+	ret := _m.Called(opts, voter)
+
+	if len(ret) == 0 {
+		panic("no return value specified for VoterNIKByAddress")
+	}
+
+	var r0 string
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (string, error)); ok {
+		return rf(opts, voter)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) string); ok {
+		r0 = rf(opts, voter)
+	} else {
+		r0 = ret.Get(0).(string)
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {
+		r1 = rf(opts, voter)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// VoterNIKByAddresses provides a mock function with given fields: opts, arg0
+func (_m *VoterManagerInterface) VoterNIKByAddresses(opts *bind.CallOpts, arg0 common.Address) (string, error) {
+	ret := _m.Called(opts, arg0)
+
+	if len(ret) == 0 {
+		panic("no return value specified for VoterNIKByAddresses")
+	}
+
+	var r0 string
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (string, error)); ok {
+		return rf(opts, arg0)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) string); ok {
+		r0 = rf(opts, arg0)
+	} else {
+		r0 = ret.Get(0).(string)
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {
+		r1 = rf(opts, arg0)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// Voters provides a mock function with given fields: opts, nik
+func (_m *VoterManagerInterface) Voters(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error) {
+	ret := _m.Called(opts, nik)
+
+	if len(ret) == 0 {
+		panic("no return value specified for Voters")
+	}
+
+	var r0 voterManager.IVoterManagerVoter
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (voterManager.IVoterManagerVoter, error)); ok {
+		return rf(opts, nik)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) voterManager.IVoterManagerVoter); ok {
+		r0 = rf(opts, nik)
+	} else {
+		r0 = ret.Get(0).(voterManager.IVoterManagerVoter)
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
+		r1 = rf(opts, nik)
 	} else {
 		r1 = ret.Error(1)
 	}

@@ -132,6 +132,34 @@ func (_m *ElectionManagerInterface) GetElection(opts *bind.CallOpts, electionId 
 	return r0, r1
 }
 
+// GetElectionByNo provides a mock function with given fields: opts, electionNo
+func (_m *ElectionManagerInterface) GetElectionByNo(opts *bind.CallOpts, electionNo string) (electionManager.IElectionManagerElection, error) {
+	ret := _m.Called(opts, electionNo)
+
+	if len(ret) == 0 {
+		panic("no return value specified for GetElectionByNo")
+	}
+
+	var r0 electionManager.IElectionManagerElection
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (electionManager.IElectionManagerElection, error)); ok {
+		return rf(opts, electionNo)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) electionManager.IElectionManagerElection); ok {
+		r0 = rf(opts, electionNo)
+	} else {
+		r0 = ret.Get(0).(electionManager.IElectionManagerElection)
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
+		r1 = rf(opts, electionNo)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // ToggleElectionActive provides a mock function with given fields: opts, electionId
 func (_m *ElectionManagerInterface) ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error) {
 	ret := _m.Called(opts, electionId)
