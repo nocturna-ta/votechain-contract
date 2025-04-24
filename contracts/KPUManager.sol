@@ -12,6 +12,7 @@ contract KPUManager is IKPUManager{
     error KPUProvinsiNotActive();
     error KPUKotaAlreadyRegistered();
     error KPUKotaNotActive();
+    error KPUNotFound();
 
     IVotechainBase public base;
 
@@ -25,6 +26,8 @@ contract KPUManager is IKPUManager{
     event KPUKotaRegistered(address indexed Address, string name, string region);
     event KPUKotaDeactivated(address indexed Address);
     event KPUProvinsiDeactivated(address indexed Address);
+    event KPUProvinsiUpdated(address indexed Address, string name, string region);
+    event KPUKotaUpdated(address indexed Address, string name, string region);
 
     modifier onlyKpuAdmin() {
         if (msg.sender != base.kpuAdmin()) revert OnlyKpuProvinsi();
@@ -122,5 +125,48 @@ contract KPUManager is IKPUManager{
     function getKpuKotaByAddress(address Address) external view returns (KPUKota memory) {
         if (!_kpuKota[Address].isActive) revert KPUKotaNotActive();
         return _kpuKota[Address];
+    }
+
+    function updateKPUProvinsi(
+        address Address,
+        string calldata name,
+        string calldata region
+    ) external override onlyKpuProvinsi {
+        if (!_kpuProvinsi[Address].isActive) revert KPUProvinsiNotActive();
+
+        _kpuProvinsi[Address].name = name;
+        _kpuProvinsi[Address].region = region;
+
+        for (uint i = 0; i < kpuProvinsiAddressesArray.length; i++) {
+            if (kpuProvinsiAddressesArray[i].Address == Address) {
+                kpuProvinsiAddressesArray[i].name = name;
+                kpuProvinsiAddressesArray[i].region = region;
+                break;
+            }
+        }
+
+        emit KPUProvinsiUpdated(Address, name, region);
+    }
+
+    function updateKPUKota(
+        address Address,
+        string calldata name,
+        string calldata region
+    ) external override onlyKpuKota {
+        if (!_kpuKota[Address].isActive) revert KPUKotaNotActive();
+
+        _kpuKota[Address].name = name;
+        _kpuKota[Address].region = region;
+
+        // Update in the array too
+        for (uint i = 0; i < kpuKotaAddressesArray.length; i++) {
+            if (kpuKotaAddressesArray[i].Address == Address) {
+                kpuKotaAddressesArray[i].name = name;
+                kpuKotaAddressesArray[i].region = region;
+                break;
+            }
+        }
+
+        emit KPUKotaUpdated(Address, name, region);
     }
 }

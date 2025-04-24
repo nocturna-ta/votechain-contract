@@ -84,4 +84,20 @@ contract Votechain {
         base.setKpuAdmin(newAdmin);
     }
 
+    function updateKPUProvinsi(
+        address Address,
+        string calldata name,
+        string calldata region
+    ) external {
+        kpuManager.updateKPUProvinsi(Address, name, region);
+    }
+
+    function updateKPUKota(
+        address Address,
+        string calldata name,
+        string calldata region
+    ) external {
+        kpuManager.updateKPUKota(Address, name, region);
+    }
+
 }

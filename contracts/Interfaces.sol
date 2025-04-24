@@ -36,6 +36,8 @@ interface IKPUManager {
     function getAllKPUKota() external view returns (KPUKota[] memory);
     function getKpuProvinsiByAddress(address Address) external view returns (KPUProvinsi memory);
     function getKpuKotaByAddress(address Address) external view returns (KPUKota memory);
+    function updateKPUProvinsi(address Address, string calldata name, string calldata region) external;
+    function updateKPUKota(address Address, string calldata name, string calldata region) external;
 }
 
 interface IVoterManager {

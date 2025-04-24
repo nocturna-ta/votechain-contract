@@ -33,3 +33,31 @@ func (v *VoterManagerAdapter) RegisterVoter(opts *bind.TransactOpts, nik string,
 func (v *VoterManagerAdapter) MarkVoted(opts *bind.TransactOpts, voterAddress common.Address) (*types.Transaction, error) {
 	return v.manager.MarkVoted(opts, voterAddress)
 }
+
+func (v *VoterManagerAdapter) KpuManager(opts *bind.CallOpts) (common.Address, error) {
+	return v.manager.KpuManager(opts)
+}
+
+func (v *VoterManagerAdapter) VoterNIKByAddress(opts *bind.CallOpts, voter common.Address) (string, error) {
+	return v.manager.VoterNIKByAddress(opts, voter)
+}
+
+func (v *VoterManagerAdapter) VoterNIKByAddresses(opts *bind.CallOpts, arg0 common.Address) (string, error) {
+	return v.manager.VoterNIKByAddresses(opts, arg0)
+}
+
+func (v *VoterManagerAdapter) Voters(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error) {
+	return v.manager.Voters(opts, nik)
+}
+
+func (v *VoterManagerAdapter) GetAllVoter(opts *bind.CallOpts) ([]voterManager.IVoterManagerVoter, error) {
+	return v.manager.GetAllVoter(opts)
+}
+
+func (v *VoterManagerAdapter) GetVoterByNIK(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error) {
+	return v.manager.GetVoterByNIK(opts, nik)
+}
+
+func (v *VoterManagerAdapter) GetVoterByRegion(opts *bind.CallOpts, region string) ([]voterManager.IVoterManagerVoter, error) {
+	return v.manager.GetVoterByRegion(opts, region)
+}

@@ -40,6 +40,8 @@ type KpuManagerInterface interface {
 	GetKpuProvinsiByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUProvinsi, error)
 	KpuKota(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUKota, error)
 	KpuProvinsi(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUProvinsi, error)
+	UpdateKPUProvinsi(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error)
+	UpdateKPUKota(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error)
 }
 
 type VoterManagerInterface interface {

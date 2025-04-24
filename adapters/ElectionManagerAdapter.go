@@ -17,6 +17,10 @@ func NewElectionManagerAdapter(manager *electionManager.ElectionManager) interfa
 	}
 }
 
+func (e *ElectionManagerAdapter) GetElectionByNo(opts *bind.CallOpts, electionNo string) (electionManager.IElectionManagerElection, error) {
+	return e.manager.GetElectionByNo(opts, electionNo)
+}
+
 func (e *ElectionManagerAdapter) Elections(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error) {
 	return e.manager.Elections(opts, electionId)
 }
