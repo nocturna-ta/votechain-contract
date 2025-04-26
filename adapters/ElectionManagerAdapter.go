@@ -33,14 +33,14 @@ func (e *ElectionManagerAdapter) GetAllElection(opts *bind.CallOpts) ([]election
 	return e.manager.GetAllElection(opts)
 }
 
-func (e *ElectionManagerAdapter) AddElection(opts *bind.TransactOpts, electionId string, electionName string, electionNo string) (*types.Transaction, error) {
-	return e.manager.AddElection(opts, electionId, electionName, electionNo)
+func (e *ElectionManagerAdapter) AddElection(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	return e.manager.AddElection(opts, electionId, electionNo)
 }
 
-func (e *ElectionManagerAdapter) ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error) {
-	return e.manager.ToggleElectionActive(opts, electionId)
+func (e *ElectionManagerAdapter) ToggleElectionActive(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	return e.manager.ToggleElectionActive(opts, electionId, electionNo)
 }
 
-func (e *ElectionManagerAdapter) Vote(opts *bind.TransactOpts, electionId string, voterNik string) (*types.Transaction, error) {
-	return e.manager.Vote(opts, electionId, voterNik)
+func (e *ElectionManagerAdapter) Vote(opts *bind.TransactOpts, electionId string, electionNo string, voterNik string) (*types.Transaction, error) {
+	return e.manager.Vote(opts, electionId, electionNo, voterNik)
 }

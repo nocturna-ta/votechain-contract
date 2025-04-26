@@ -394,6 +394,66 @@ func (_m *KpuManagerInterface) RegisterKPUProvinsi(opts *bind.TransactOpts, Addr
 	return r0, r1
 }
 
+// UpdateKPUKota provides a mock function with given fields: opts, Address, name, region
+func (_m *KpuManagerInterface) UpdateKPUKota(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error) {
+	ret := _m.Called(opts, Address, name, region)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateKPUKota")
+	}
+
+	var r0 *types.Transaction
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, common.Address, string, string) (*types.Transaction, error)); ok {
+		return rf(opts, Address, name, region)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, common.Address, string, string) *types.Transaction); ok {
+		r0 = rf(opts, Address, name, region)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*types.Transaction)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, common.Address, string, string) error); ok {
+		r1 = rf(opts, Address, name, region)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// UpdateKPUProvinsi provides a mock function with given fields: opts, Address, name, region
+func (_m *KpuManagerInterface) UpdateKPUProvinsi(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error) {
+	ret := _m.Called(opts, Address, name, region)
+
+	if len(ret) == 0 {
+		panic("no return value specified for UpdateKPUProvinsi")
+	}
+
+	var r0 *types.Transaction
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, common.Address, string, string) (*types.Transaction, error)); ok {
+		return rf(opts, Address, name, region)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, common.Address, string, string) *types.Transaction); ok {
+		r0 = rf(opts, Address, name, region)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*types.Transaction)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, common.Address, string, string) error); ok {
+		r1 = rf(opts, Address, name, region)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // NewKpuManagerInterface creates a new instance of KpuManagerInterface. It also registers a testing interface on the mock and a cleanup function to assert the mocks expectations.
 // The first argument is typically a *testing.T value.
 func NewKpuManagerInterface(t interface {

@@ -7,6 +7,7 @@ contract ElectionManager is IElectionManager {
     error InvalidElection();
     error ElectionAlreadyExists();
     error UnauthorizedCaller();
+    error ElectionNumberMismatch();
 
     IVotechainBase public base;
     IVoterManager public voterManager;
@@ -14,9 +15,9 @@ contract ElectionManager is IElectionManager {
     mapping(string => Election) public _electionss;
     Election[] public electionAddressArray;
 
-    event ElectionAdded(string indexed electionId, string electionName);
-    event ElectionStatusChange(string indexed electionId, bool isActive);
-    event VoteCasted(string indexed nik, string indexed candidateId);
+    event ElectionAdded(string indexed electionId, string electionNo);
+    event ElectionStatusChange(string indexed electionId, string indexed electionNo, bool isActive);
+    event VoteCasted(string indexed nik, string indexed electionId);
 
     constructor(address _baseAddress, address _voterManagerAddress) {
         base = IVotechainBase(_baseAddress);
@@ -40,42 +41,48 @@ contract ElectionManager is IElectionManager {
 
     function addElection(
         string calldata electionId,
-        string calldata electionName,
         string calldata electionNo
     ) external override onlyKpuAdmin {
-        if (bytes(_electionss[electionId].id).length != 0) revert ElectionAlreadyExists();
+
+        Election memory election = _electionss[electionId];
+        if (bytes(election.id).length != 0) revert ElectionAlreadyExists();
 
         Election memory newElection = Election({
             id: electionId,
-            electionName: electionName,
             electionNo: electionNo,
             voteCount: 0,
             isActive: true
         });
-        _electionss[electionId] = newElection;
+        election = newElection;
         electionAddressArray.push(newElection);
 
-        emit ElectionAdded(electionId, electionName);
+        emit ElectionAdded(electionId, electionNo);
     }
 
-    function toggleElectionActive(string calldata electionId) external override onlyKpuAdmin {
-        if (bytes(_electionss[electionId].id).length == 0) revert InvalidElection();
-        _electionss[electionId].isActive = !_electionss[electionId].isActive;
-        emit ElectionStatusChange(electionId, _electionss[electionId].isActive);
+    function toggleElectionActive(string calldata electionId, string calldata electionNo) external override onlyKpuAdmin {
+        Election storage election = _electionss[electionId];
+        if (bytes(election.id).length == 0) revert InvalidElection();
+        if (keccak256(bytes(election.electionNo)) != keccak256(bytes(electionNo))) revert ElectionNumberMismatch();
+
+        election.isActive = !election.isActive;
+        emit ElectionStatusChange(electionId, electionNo, election.isActive);
     }
 
-    function vote(string calldata electionId, string memory voterNik) external override votingIsActive {
-
-        if (bytes(_electionss[electionId].id).length == 0 || !_electionss[electionId].isActive)
+    function vote(string calldata electionId, string calldata electionNo, string memory voterNik) external override votingIsActive {
+        Election storage election = _electionss[electionId];
+        if (bytes(election.id).length == 0 || election.isActive)
             revert InvalidElection();
 
-        _electionss[electionId].voteCount++;
+        if (keccak256(bytes(election.electionNo)) != keccak256(bytes(electionNo))) revert ElectionNumberMismatch();
+
+        election.voteCount++;
         emit VoteCasted(voterNik, electionId);
     }
 
     function getElection(string calldata electionId) external view override returns (Election memory) {
-        if (bytes(_electionss[electionId].id).length == 0) revert InvalidElection();
-        return _electionss[electionId];
+        Election storage election = _electionss[electionId];
+        if (bytes(election.id).length == 0) revert InvalidElection();
+        return election;
     }
 
     function getAllElection() external view returns (Election[] memory) {

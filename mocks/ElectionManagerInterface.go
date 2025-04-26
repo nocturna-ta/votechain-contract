@@ -16,9 +16,9 @@ type ElectionManagerInterface struct {
 	mock.Mock
 }
 
-// AddElection provides a mock function with given fields: opts, electionId, electionName, electionNo
-func (_m *ElectionManagerInterface) AddElection(opts *bind.TransactOpts, electionId string, electionName string, electionNo string) (*types.Transaction, error) {
-	ret := _m.Called(opts, electionId, electionName, electionNo)
+// AddElection provides a mock function with given fields: opts, electionId, electionNo
+func (_m *ElectionManagerInterface) AddElection(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	ret := _m.Called(opts, electionId, electionNo)
 
 	if len(ret) == 0 {
 		panic("no return value specified for AddElection")
@@ -26,19 +26,19 @@ func (_m *ElectionManagerInterface) AddElection(opts *bind.TransactOpts, electio
 
 	var r0 *types.Transaction
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string, string) (*types.Transaction, error)); ok {
-		return rf(opts, electionId, electionName, electionNo)
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string) (*types.Transaction, error)); ok {
+		return rf(opts, electionId, electionNo)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string, string) *types.Transaction); ok {
-		r0 = rf(opts, electionId, electionName, electionNo)
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string) *types.Transaction); ok {
+		r0 = rf(opts, electionId, electionNo)
 	} else {
 		if ret.Get(0) != nil {
 			r0 = ret.Get(0).(*types.Transaction)
 		}
 	}
 
-	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, string, string, string) error); ok {
-		r1 = rf(opts, electionId, electionName, electionNo)
+	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, string, string) error); ok {
+		r1 = rf(opts, electionId, electionNo)
 	} else {
 		r1 = ret.Error(1)
 	}
@@ -160,9 +160,9 @@ func (_m *ElectionManagerInterface) GetElectionByNo(opts *bind.CallOpts, electio
 	return r0, r1
 }
 
-// ToggleElectionActive provides a mock function with given fields: opts, electionId
-func (_m *ElectionManagerInterface) ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error) {
-	ret := _m.Called(opts, electionId)
+// ToggleElectionActive provides a mock function with given fields: opts, electionId, electionNo
+func (_m *ElectionManagerInterface) ToggleElectionActive(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	ret := _m.Called(opts, electionId, electionNo)
 
 	if len(ret) == 0 {
 		panic("no return value specified for ToggleElectionActive")
@@ -170,41 +170,11 @@ func (_m *ElectionManagerInterface) ToggleElectionActive(opts *bind.TransactOpts
 
 	var r0 *types.Transaction
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string) (*types.Transaction, error)); ok {
-		return rf(opts, electionId)
-	}
-	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string) *types.Transaction); ok {
-		r0 = rf(opts, electionId)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*types.Transaction)
-		}
-	}
-
-	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, string) error); ok {
-		r1 = rf(opts, electionId)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
-// Vote provides a mock function with given fields: opts, electionId, voterNik
-func (_m *ElectionManagerInterface) Vote(opts *bind.TransactOpts, electionId string, voterNik string) (*types.Transaction, error) {
-	ret := _m.Called(opts, electionId, voterNik)
-
-	if len(ret) == 0 {
-		panic("no return value specified for Vote")
-	}
-
-	var r0 *types.Transaction
-	var r1 error
 	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string) (*types.Transaction, error)); ok {
-		return rf(opts, electionId, voterNik)
+		return rf(opts, electionId, electionNo)
 	}
 	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string) *types.Transaction); ok {
-		r0 = rf(opts, electionId, voterNik)
+		r0 = rf(opts, electionId, electionNo)
 	} else {
 		if ret.Get(0) != nil {
 			r0 = ret.Get(0).(*types.Transaction)
@@ -212,7 +182,37 @@ func (_m *ElectionManagerInterface) Vote(opts *bind.TransactOpts, electionId str
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, string, string) error); ok {
-		r1 = rf(opts, electionId, voterNik)
+		r1 = rf(opts, electionId, electionNo)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// Vote provides a mock function with given fields: opts, electionId, electionNo, voterNik
+func (_m *ElectionManagerInterface) Vote(opts *bind.TransactOpts, electionId string, electionNo string, voterNik string) (*types.Transaction, error) {
+	ret := _m.Called(opts, electionId, electionNo, voterNik)
+
+	if len(ret) == 0 {
+		panic("no return value specified for Vote")
+	}
+
+	var r0 *types.Transaction
+	var r1 error
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string, string) (*types.Transaction, error)); ok {
+		return rf(opts, electionId, electionNo, voterNik)
+	}
+	if rf, ok := ret.Get(0).(func(*bind.TransactOpts, string, string, string) *types.Transaction); ok {
+		r0 = rf(opts, electionId, electionNo, voterNik)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*types.Transaction)
+		}
+	}
+
+	if rf, ok := ret.Get(1).(func(*bind.TransactOpts, string, string, string) error); ok {
+		r1 = rf(opts, electionId, electionNo, voterNik)
 	} else {
 		r1 = ret.Error(1)
 	}

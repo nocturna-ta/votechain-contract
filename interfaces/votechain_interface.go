@@ -13,9 +13,9 @@ type ElectionManagerInterface interface {
 	Elections(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error)
 	GetElection(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error)
 	GetAllElection(opts *bind.CallOpts) ([]electionManager.IElectionManagerElection, error)
-	AddElection(opts *bind.TransactOpts, electionId string, electionName string, electionNo string) (*types.Transaction, error)
-	ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error)
-	Vote(opts *bind.TransactOpts, electionId string, voterNik string) (*types.Transaction, error)
+	AddElection(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error)
+	ToggleElectionActive(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error)
+	Vote(opts *bind.TransactOpts, electionId string, electionNo string, voterNik string) (*types.Transaction, error)
 	GetElectionByNo(opts *bind.CallOpts, electionNo string) (electionManager.IElectionManagerElection, error)
 }
 
@@ -59,12 +59,12 @@ type VoterManagerInterface interface {
 }
 
 type VotechainInterface interface {
-	Vote(opts *bind.TransactOpts, electionId string) (*types.Transaction, error)
+	Vote(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error)
 	RegisterKPUProvinsi(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error)
 	RegisterKPUKota(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error)
 	RegisterVoter(opts *bind.TransactOpts, nik string, voterAddress common.Address) (*types.Transaction, error)
-	AddElection(opts *bind.TransactOpts, electionId string, electionName string, electionNo string) (*types.Transaction, error)
-	ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error)
+	AddElection(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error)
+	ToggleElectionActive(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error)
 	SetVotingStatus(opts *bind.TransactOpts, status bool) (*types.Transaction, error)
 	SetKpuAdmin(opts *bind.TransactOpts, newAdmin common.Address) (*types.Transaction, error)
 }

@@ -27,7 +27,7 @@ contract Votechain {
     }
 
     // Public-facing function to cast votes
-    function vote(string calldata electionId) external {
+    function vote(string calldata electionId, string calldata electionNo) external {
         if (!base.votingActive()) revert VotingNotActive();
 
         try voterManager.getVoterByAddress(msg.sender) returns (IVoterManager.Voter memory voter) {
@@ -35,7 +35,7 @@ contract Votechain {
 
             voterManager.markVoted(msg.sender);
 
-            electionManager.vote(electionId, voter.nik);
+            electionManager.vote(electionId, electionNo, voter.nik);
         } catch {
             revert VoterNotRegistered();
         }
@@ -66,14 +66,14 @@ contract Votechain {
 
     function addElection(
         string calldata electionId,
-        string calldata electionName,
+
         string calldata electionNo
     ) external {
-        electionManager.addElection(electionId, electionName, electionNo);
+        electionManager.addElection(electionId, electionNo);
     }
 
-    function toggleElectionActive(string calldata electionId) external {
-        electionManager.toggleElectionActive(electionId);
+    function toggleElectionActive(string calldata electionId, string calldata electionNo) external {
+        electionManager.toggleElectionActive(electionId, electionNo);
     }
 
     function setVotingStatus(bool status) external {

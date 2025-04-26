@@ -18,9 +18,8 @@ func NewVotechainAdapter(votechain *votechain.Votechain) interfaces.VotechainInt
 	}
 }
 
-func (v *VotechainAdapter) Vote(opts *bind.TransactOpts, electionId string) (*types.Transaction, error) {
-	//TODO implement me
-	panic("implement me")
+func (v *VotechainAdapter) Vote(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	return v.votechain.Vote(opts, electionId, electionNo)
 }
 
 func (v *VotechainAdapter) RegisterKPUProvinsi(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error) {
@@ -35,12 +34,12 @@ func (v *VotechainAdapter) RegisterVoter(opts *bind.TransactOpts, nik string, vo
 	return v.votechain.RegisterVoter(opts, nik, voterAddress)
 }
 
-func (v *VotechainAdapter) AddElection(opts *bind.TransactOpts, electionId string, electionName string, electionNo string) (*types.Transaction, error) {
-	return v.votechain.AddElection(opts, electionId, electionName, electionNo)
+func (v *VotechainAdapter) AddElection(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	return v.votechain.AddElection(opts, electionId, electionNo)
 }
 
-func (v *VotechainAdapter) ToggleElectionActive(opts *bind.TransactOpts, electionId string) (*types.Transaction, error) {
-	return v.votechain.ToggleElectionActive(opts, electionId)
+func (v *VotechainAdapter) ToggleElectionActive(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {
+	return v.votechain.ToggleElectionActive(opts, electionId, electionNo)
 }
 
 func (v *VotechainAdapter) SetVotingStatus(opts *bind.TransactOpts, status bool) (*types.Transaction, error) {

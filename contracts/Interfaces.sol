@@ -61,15 +61,14 @@ interface IVoterManager {
 interface IElectionManager {
     struct Election {
         string id;
-        string electionName;
         string electionNo;
         uint256 voteCount;
         bool isActive;
     }
 
-    function addElection(string calldata electionId, string calldata electionName, string calldata electionNo) external;
-    function toggleElectionActive(string calldata electionId) external;
-    function vote(string calldata electionId, string memory voterNik) external;
+    function addElection(string calldata electionId, string calldata electionNo) external;
+    function toggleElectionActive(string calldata electionId, string calldata electionNo) external;
+    function vote(string calldata electionId, string calldata electionNo, string memory voterNik) external;
     function getElection(string calldata electionId) external view returns (Election memory);
     function getAllElection() external view returns (Election[] memory);
     function getElectionByNo(string calldata electionNo) external view returns (Election memory);
