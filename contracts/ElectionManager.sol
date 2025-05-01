@@ -47,6 +47,12 @@ contract ElectionManager is IElectionManager {
         Election memory election = _electionss[electionId];
         if (bytes(election.id).length != 0) revert ElectionAlreadyExists();
 
+        for (uint i = 0; i < electionAddressArray.length; i++) {
+            if (keccak256(bytes(electionAddressArray[i].electionNo)) == keccak256(bytes(electionNo))) {
+                revert ElectionAlreadyExists();
+            }
+        }
+
         Election memory newElection = Election({
             id: electionId,
             electionNo: electionNo,
@@ -54,6 +60,7 @@ contract ElectionManager is IElectionManager {
             isActive: true
         });
         election = newElection;
+        _electionss[electionId] = newElection;
         electionAddressArray.push(newElection);
 
         emit ElectionAdded(electionId, electionNo);
