@@ -10,6 +10,8 @@ contract VoterManager is IVoterManager {
     error AlreadyVoted();
     error UnauthorizedKPU();
 
+
+
     IVotechainBase public base;
     IKPUManager public kpuManager;
 
@@ -18,6 +20,8 @@ contract VoterManager is IVoterManager {
     Voter[] public voterAddressesArray;
 
     event VoterRegistered(string indexed nik, address indexed voterAddress, string region);
+    event VoterMarkedAsVoted(address indexed voterAddress, string indexed nik);
+
 
     constructor(address _baseAddress, address _kpuManagerAddress) {
         base = IVotechainBase(_baseAddress);
@@ -69,6 +73,14 @@ contract VoterManager is IVoterManager {
         if (voter.hasVoted) revert AlreadyVoted();
 
         voter.hasVoted = true;
+
+        for (uint i = 0; i < voterAddressesArray.length; i++) {
+            if (voterAddressesArray[i].voterAddress == voterAddress) {
+                voterAddressesArray[i].hasVoted = true;
+                break;
+            }
+        }
+        emit VoterMarkedAsVoted(voterAddress, nik);
         return true;
     }
 

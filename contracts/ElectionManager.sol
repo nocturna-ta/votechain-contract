@@ -8,6 +8,10 @@ contract ElectionManager is IElectionManager {
     error ElectionAlreadyExists();
     error UnauthorizedCaller();
     error ElectionNumberMismatch();
+    error VoterNotRegistered();
+    error VoterAlreadyVoted();
+    error NIKMismatch();
+    error ElectionNotActive();
 
     IVotechainBase public base;
     IVoterManager public voterManager;
@@ -17,7 +21,7 @@ contract ElectionManager is IElectionManager {
 
     event ElectionAdded(string indexed electionId, string electionNo);
     event ElectionStatusChange(string indexed electionId, string indexed electionNo, bool isActive);
-    event VoteCasted(string indexed nik, string indexed electionId);
+    event VoteCasted(string indexed nik, string indexed electionId, string indexed electionNo);
 
     constructor(address _baseAddress, address _voterManagerAddress) {
         base = IVotechainBase(_baseAddress);
@@ -72,16 +76,36 @@ contract ElectionManager is IElectionManager {
         if (keccak256(bytes(election.electionNo)) != keccak256(bytes(electionNo))) revert ElectionNumberMismatch();
 
         election.isActive = !election.isActive;
+        for (uint i = 0; i < electionAddressArray.length; i++) {
+            if (keccak256(bytes(electionAddressArray[i].id)) == keccak256(bytes(electionId))) {
+                electionAddressArray[i].isActive = election.isActive;
+                break;
+            }
+        }
         emit ElectionStatusChange(electionId, electionNo, election.isActive);
     }
 
-    function vote(string calldata electionId, string calldata electionNo, string memory voterNik) external override votingIsActive {
+    function vote(string calldata electionId, string calldata electionNo, string calldata voterNik) external override votingIsActive {
+        Election storage election = _electionss[electionId];
+        if (bytes(election.id).length == 0) revert InvalidElection();
+        if (!election.isActive) revert ElectionNotActive();
+
+        if (keccak256(bytes(election.electionNo)) != keccak256(bytes(electionNo))) revert ElectionNumberMismatch();
+
+        IVoterManager.Voter memory voter = voterManager.getVoterByAddress(msg.sender);
+        if (voter.hasVoted) revert VoterAlreadyVoted();
+        if (voter.hasVoted) revert VoterAlreadyVoted();
+
+        if (keccak256(bytes(voter.nik)) != keccak256(bytes(voterNik))) revert NIKMismatch();
 
         for (uint i = 0; i < electionAddressArray.length; i++) {
             if (keccak256(bytes(electionAddressArray[i].electionNo)) == keccak256(bytes(electionNo))) {
                 electionAddressArray[i].voteCount+= 1;
+                break;
             }
         }
+
+        emit VoteCasted(voterNik, electionId, electionNo);
     }
 
     function getElection(string calldata electionId) external view override returns (Election memory) {

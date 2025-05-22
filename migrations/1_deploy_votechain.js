@@ -22,7 +22,7 @@ module.exports = async function(deployer, network, accounts) {
     // console.log(`VoterManager deployed at: ${voterManagerInstance.address}`);
 
     console.log("Deploying ElectionManager...");
-    await deployer.deploy(ElectionManager, '0xBcDc1f66f7C4adEE4980567a29ba3687a7FCB294', '0xac10688B8C5ed19007CC6c1296E8155C3630db94');
+    await deployer.deploy(ElectionManager, '0xB1aDFD125A736f17Fc8914c993698934BA834B13', '0x8c43Cea2fE39635De63893e45A072B8fD73a1be7');
     const electionManagerInstance = await ElectionManager.deployed();
     console.log(`ElectionManager deployed at: ${electionManagerInstance.address}`);
 
@@ -36,7 +36,7 @@ module.exports = async function(deployer, network, accounts) {
     // );
     // const votechainInstance = await Votechain.deployed();
     // console.log(`Votechain deployed at: ${votechainInstance.address}`);
-
+    //
     // console.log("\n======== Contract Addresses ========");
     // console.log(`VotechainBase: ${baseInstance.address}`);
     // console.log(`KPUManager: ${kpuManagerInstance.address}`);
