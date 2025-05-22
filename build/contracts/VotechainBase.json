@@ -40,8 +40,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -54,8 +53,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -1044,27 +1042,27 @@
     "absolutePath": "project:/contracts/VotechainBase.sol",
     "exportedSymbols": {
       "IElectionManager": [
-        692
+        680
       ],
       "IKPUManager": [
-        571
+        559
       ],
       "IVotechainBase": [
-        439
+        427
       ],
       "IVoterManager": [
-        636
+        624
       ],
       "VotechainBase": [
-        1611
+        1599
       ]
     },
-    "id": 1612,
+    "id": 1600,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1532,
+        "id": 1520,
         "literals": [
           "solidity",
           "^",
@@ -1077,11 +1075,11 @@
       {
         "absolutePath": "project:/contracts/Interfaces.sol",
         "file": "./Interfaces.sol",
-        "id": 1533,
+        "id": 1521,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 1612,
-        "sourceUnit": 693,
+        "scope": 1600,
+        "sourceUnit": 681,
         "src": "68:26:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1091,16 +1089,16 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 1534,
+              "id": 1522,
               "name": "IVotechainBase",
               "nameLocations": [
                 "124:14:4"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 439,
+              "referencedDeclaration": 427,
               "src": "124:14:4"
             },
-            "id": 1535,
+            "id": 1523,
             "nodeType": "InheritanceSpecifier",
             "src": "124:14:4"
           }
@@ -1109,10 +1107,10 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 1611,
+        "id": 1599,
         "linearizedBaseContracts": [
-          1611,
-          439
+          1599,
+          427
         ],
         "name": "VotechainBase",
         "nameLocation": "107:13:4",
@@ -1120,12 +1118,12 @@
         "nodes": [
           {
             "errorSelector": "8b8958dc",
-            "id": 1537,
+            "id": 1525,
             "name": "OnlyKpuAdmin",
             "nameLocation": "152:12:4",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 1536,
+              "id": 1524,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "164:2:4"
@@ -1134,12 +1132,12 @@
           },
           {
             "errorSelector": "9b8cc475",
-            "id": 1539,
+            "id": 1527,
             "name": "VotingNotActive",
             "nameLocation": "179:15:4",
             "nodeType": "ErrorDefinition",
             "parameters": {
-              "id": 1538,
+              "id": 1526,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "194:2:4"
@@ -1148,22 +1146,22 @@
           },
           {
             "baseFunctions": [
-              423
+              411
             ],
             "constant": false,
             "functionSelector": "fb4ab164",
-            "id": 1542,
+            "id": 1530,
             "mutability": "mutable",
             "name": "kpuAdmin",
             "nameLocation": "229:8:4",
             "nodeType": "VariableDeclaration",
             "overrides": {
-              "id": 1541,
+              "id": 1529,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "220:8:4"
             },
-            "scope": 1611,
+            "scope": 1599,
             "src": "205:32:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1172,7 +1170,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 1540,
+              "id": 1528,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "205:7:4",
@@ -1186,22 +1184,22 @@
           },
           {
             "baseFunctions": [
-              428
+              416
             ],
             "constant": false,
             "functionSelector": "408e2727",
-            "id": 1545,
+            "id": 1533,
             "mutability": "mutable",
             "name": "votingActive",
             "nameLocation": "265:12:4",
             "nodeType": "VariableDeclaration",
             "overrides": {
-              "id": 1544,
+              "id": 1532,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "256:8:4"
             },
-            "scope": 1611,
+            "scope": 1599,
             "src": "244:33:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1210,7 +1208,7 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 1543,
+              "id": 1531,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
               "src": "244:4:4",
@@ -1224,23 +1222,23 @@
           {
             "anonymous": false,
             "eventSelector": "9069a1a16ace751e8690f383e12f87b01e8488ba387e626810bd113fef0417f9",
-            "id": 1549,
+            "id": 1537,
             "name": "VotingStatusChanged",
             "nameLocation": "292:19:4",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1548,
+              "id": 1536,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1547,
+                  "id": 1535,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "isActive",
                   "nameLocation": "317:8:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1549,
+                  "scope": 1537,
                   "src": "312:13:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1249,7 +1247,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1546,
+                    "id": 1534,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "312:4:4",
@@ -1267,7 +1265,7 @@
           },
           {
             "body": {
-              "id": 1560,
+              "id": 1548,
               "nodeType": "Block",
               "src": "359:80:4",
               "statements": [
@@ -1277,14 +1275,14 @@
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-                    "id": 1554,
+                    "id": 1542,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "expression": {
-                        "id": 1551,
+                        "id": 1539,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1295,7 +1293,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 1552,
+                      "id": 1540,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1312,11 +1310,11 @@
                     "nodeType": "BinaryOperation",
                     "operator": "!=",
                     "rightExpression": {
-                      "id": 1553,
+                      "id": 1541,
                       "name": "kpuAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1542,
+                      "referencedDeclaration": 1530,
                       "src": "388:8:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1329,7 +1327,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1558,
+                  "id": 1546,
                   "nodeType": "IfStatement",
                   "src": "370:49:4",
                   "trueBody": {
@@ -1337,18 +1335,18 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 1555,
+                        "id": 1543,
                         "name": "OnlyKpuAdmin",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1537,
+                        "referencedDeclaration": 1525,
                         "src": "405:12:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 1556,
+                      "id": 1544,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1364,24 +1362,24 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1557,
+                    "id": 1545,
                     "nodeType": "RevertStatement",
                     "src": "398:21:4"
                   }
                 },
                 {
-                  "id": 1559,
+                  "id": 1547,
                   "nodeType": "PlaceholderStatement",
                   "src": "430:1:4"
                 }
               ]
             },
-            "id": 1561,
+            "id": 1549,
             "name": "onlyKpuAdmin",
             "nameLocation": "344:12:4",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1550,
+              "id": 1538,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "356:2:4"
@@ -1392,13 +1390,13 @@
           },
           {
             "body": {
-              "id": 1570,
+              "id": 1558,
               "nodeType": "Block",
               "src": "473:74:4",
               "statements": [
                 {
                   "condition": {
-                    "id": 1564,
+                    "id": 1552,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1408,11 +1406,11 @@
                     "prefix": true,
                     "src": "488:13:4",
                     "subExpression": {
-                      "id": 1563,
+                      "id": 1551,
                       "name": "votingActive",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1545,
+                      "referencedDeclaration": 1533,
                       "src": "489:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1424,7 +1422,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1568,
+                  "id": 1556,
                   "nodeType": "IfStatement",
                   "src": "484:43:4",
                   "trueBody": {
@@ -1432,18 +1430,18 @@
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
-                        "id": 1565,
+                        "id": 1553,
                         "name": "VotingNotActive",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1539,
+                        "referencedDeclaration": 1527,
                         "src": "510:15:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 1566,
+                      "id": 1554,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1459,24 +1457,24 @@
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 1567,
+                    "id": 1555,
                     "nodeType": "RevertStatement",
                     "src": "503:24:4"
                   }
                 },
                 {
-                  "id": 1569,
+                  "id": 1557,
                   "nodeType": "PlaceholderStatement",
                   "src": "538:1:4"
                 }
               ]
             },
-            "id": 1571,
+            "id": 1559,
             "name": "votingIsActive",
             "nameLocation": "456:14:4",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 1562,
+              "id": 1550,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "470:2:4"
@@ -1487,23 +1485,23 @@
           },
           {
             "body": {
-              "id": 1579,
+              "id": 1567,
               "nodeType": "Block",
               "src": "568:40:4",
               "statements": [
                 {
                   "expression": {
-                    "id": 1577,
+                    "id": 1565,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 1574,
+                      "id": 1562,
                       "name": "kpuAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1542,
+                      "referencedDeclaration": 1530,
                       "src": "579:8:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1514,7 +1512,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 1575,
+                        "id": 1563,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -1525,7 +1523,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 1576,
+                      "id": 1564,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1545,13 +1543,13 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1578,
+                  "id": 1566,
                   "nodeType": "ExpressionStatement",
                   "src": "579:21:4"
                 }
               ]
             },
-            "id": 1580,
+            "id": 1568,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -1559,18 +1557,18 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1572,
+              "id": 1560,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "566:2:4"
             },
             "returnParameters": {
-              "id": 1573,
+              "id": 1561,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "568:0:4"
             },
-            "scope": 1611,
+            "scope": 1599,
             "src": "555:53:4",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1578,26 +1576,26 @@
           },
           {
             "baseFunctions": [
-              433
+              421
             ],
             "body": {
-              "id": 1596,
+              "id": 1584,
               "nodeType": "Block",
               "src": "685:83:4",
               "statements": [
                 {
                   "expression": {
-                    "id": 1590,
+                    "id": 1578,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 1588,
+                      "id": 1576,
                       "name": "votingActive",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1545,
+                      "referencedDeclaration": 1533,
                       "src": "696:12:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1607,11 +1605,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 1589,
+                      "id": 1577,
                       "name": "status",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1582,
+                      "referencedDeclaration": 1570,
                       "src": "711:6:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1624,7 +1622,7 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1591,
+                  "id": 1579,
                   "nodeType": "ExpressionStatement",
                   "src": "696:21:4"
                 },
@@ -1632,11 +1630,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 1593,
+                        "id": 1581,
                         "name": "status",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1582,
+                        "referencedDeclaration": 1570,
                         "src": "753:6:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -1651,18 +1649,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 1592,
+                      "id": 1580,
                       "name": "VotingStatusChanged",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1549,
+                      "referencedDeclaration": 1537,
                       "src": "733:19:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_bool_$returns$__$",
                         "typeString": "function (bool)"
                       }
                     },
-                    "id": 1594,
+                    "id": 1582,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1678,28 +1676,28 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1595,
+                  "id": 1583,
                   "nodeType": "EmitStatement",
                   "src": "728:32:4"
                 }
               ]
             },
             "functionSelector": "7478c9fe",
-            "id": 1597,
+            "id": 1585,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1586,
+                "id": 1574,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1585,
+                  "id": 1573,
                   "name": "onlyKpuAdmin",
                   "nameLocations": [
                     "672:12:4"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1561,
+                  "referencedDeclaration": 1549,
                   "src": "672:12:4"
                 },
                 "nodeType": "ModifierInvocation",
@@ -1710,23 +1708,23 @@
             "nameLocation": "625:15:4",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 1584,
+              "id": 1572,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "663:8:4"
             },
             "parameters": {
-              "id": 1583,
+              "id": 1571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1582,
+                  "id": 1570,
                   "mutability": "mutable",
                   "name": "status",
                   "nameLocation": "646:6:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1597,
+                  "scope": 1585,
                   "src": "641:11:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1735,7 +1733,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1581,
+                    "id": 1569,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "641:4:4",
@@ -1750,12 +1748,12 @@
               "src": "640:13:4"
             },
             "returnParameters": {
-              "id": 1587,
+              "id": 1575,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "685:0:4"
             },
-            "scope": 1611,
+            "scope": 1599,
             "src": "616:152:4",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1763,26 +1761,26 @@
           },
           {
             "baseFunctions": [
-              438
+              426
             ],
             "body": {
-              "id": 1609,
+              "id": 1597,
               "nodeType": "Block",
               "src": "846:38:4",
               "statements": [
                 {
                   "expression": {
-                    "id": 1607,
+                    "id": 1595,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 1605,
+                      "id": 1593,
                       "name": "kpuAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1542,
+                      "referencedDeclaration": 1530,
                       "src": "857:8:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1792,11 +1790,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 1606,
+                      "id": 1594,
                       "name": "newAdmin",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1599,
+                      "referencedDeclaration": 1587,
                       "src": "868:8:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1809,28 +1807,28 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 1608,
+                  "id": 1596,
                   "nodeType": "ExpressionStatement",
                   "src": "857:19:4"
                 }
               ]
             },
             "functionSelector": "9df86dc1",
-            "id": 1610,
+            "id": 1598,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1603,
+                "id": 1591,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1602,
+                  "id": 1590,
                   "name": "onlyKpuAdmin",
                   "nameLocations": [
                     "833:12:4"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 1561,
+                  "referencedDeclaration": 1549,
                   "src": "833:12:4"
                 },
                 "nodeType": "ModifierInvocation",
@@ -1841,23 +1839,23 @@
             "nameLocation": "785:11:4",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 1601,
+              "id": 1589,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "824:8:4"
             },
             "parameters": {
-              "id": 1600,
+              "id": 1588,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1599,
+                  "id": 1587,
                   "mutability": "mutable",
                   "name": "newAdmin",
                   "nameLocation": "805:8:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1610,
+                  "scope": 1598,
                   "src": "797:16:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1866,7 +1864,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1598,
+                    "id": 1586,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "797:7:4",
@@ -1882,26 +1880,26 @@
               "src": "796:18:4"
             },
             "returnParameters": {
-              "id": 1604,
+              "id": 1592,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "846:0:4"
             },
-            "scope": 1611,
+            "scope": 1599,
             "src": "776:108:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1612,
+        "scope": 1600,
         "src": "98:797:4",
         "usedErrors": [
-          1537,
-          1539
+          1525,
+          1527
         ],
         "usedEvents": [
-          1549
+          1537
         ]
       }
     ],
@@ -1915,12 +1913,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x19c9cbca224b17Ba2e73884C6F2699655A0C71f8",
-      "transactionHash": "0x39ce6555f7a90ac39c264b1866ec5be2cc436974caf87969c3c62a5247203fe2"
+      "address": "0xBcDc1f66f7C4adEE4980567a29ba3687a7FCB294",
+      "transactionHash": "0x4115ac69c9828c6e7d1e6a78f0bff848c1fee6af43500067d9b5a07cd46bf52d"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-05-01T06:45:23.935Z",
+  "updatedAt": "2025-05-20T10:46:29.145Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

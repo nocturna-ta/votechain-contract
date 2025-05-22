@@ -76,14 +76,12 @@ contract ElectionManager is IElectionManager {
     }
 
     function vote(string calldata electionId, string calldata electionNo, string memory voterNik) external override votingIsActive {
-        Election storage election = _electionss[electionId];
-        if (bytes(election.id).length == 0 || election.isActive)
-            revert InvalidElection();
 
-        if (keccak256(bytes(election.electionNo)) != keccak256(bytes(electionNo))) revert ElectionNumberMismatch();
-
-        election.voteCount++;
-        emit VoteCasted(voterNik, electionId);
+        for (uint i = 0; i < electionAddressArray.length; i++) {
+            if (keccak256(bytes(electionAddressArray[i].electionNo)) == keccak256(bytes(electionNo))) {
+                electionAddressArray[i].voteCount+= 1;
+            }
+        }
     }
 
     function getElection(string calldata electionId) external view override returns (Election memory) {
