@@ -1,0 +1,23 @@
+{
+  "name": "votechain-contract",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/nocturna-ta/votechain-contract#readme",
+  "bugs": {
+    "url": "https://github.com/nocturna-ta/votechain-contract/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nocturna-ta/votechain-contract.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

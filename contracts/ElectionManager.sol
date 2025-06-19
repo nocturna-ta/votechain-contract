@@ -2,8 +2,9 @@
 pragma solidity ^0.8.25;
 
 import "./Interfaces.sol";
+import "./Context.sol";
 
-contract ElectionManager is IElectionManager {
+contract ElectionManager is IElectionManager, MultiERC2771Context {
     error InvalidElection();
     error ElectionAlreadyExists();
     error UnauthorizedCaller();
@@ -23,7 +24,11 @@ contract ElectionManager is IElectionManager {
     event ElectionStatusChange(string indexed electionId, string indexed electionNo, bool isActive);
     event VoteCasted(string indexed nik, string indexed electionId, string indexed electionNo);
 
-    constructor(address _baseAddress, address _voterManagerAddress) {
+    constructor(
+        address _baseAddress,
+        address _voterManagerAddress,
+        address[] memory trustedForwarders
+    ) MultiERC2771Context(trustedForwarders) {
         base = IVotechainBase(_baseAddress);
         voterManager = IVoterManager(_voterManagerAddress);
     }
@@ -32,9 +37,8 @@ contract ElectionManager is IElectionManager {
         return _electionss[electionId];
     }
 
-
     modifier onlyKpuAdmin() {
-        if (msg.sender != base.kpuAdmin()) revert UnauthorizedCaller();
+        if (_msgSender() != base.kpuAdmin()) revert UnauthorizedCaller();
         _;
     }
 
@@ -92,15 +96,20 @@ contract ElectionManager is IElectionManager {
 
         if (keccak256(bytes(election.electionNo)) != keccak256(bytes(electionNo))) revert ElectionNumberMismatch();
 
-        IVoterManager.Voter memory voter = voterManager.getVoterByAddress(msg.sender);
-        if (voter.hasVoted) revert VoterAlreadyVoted();
+        // Use _msgSender() instead of msg.sender for gasless transactions
+        address sender = _msgSender();
+        IVoterManager.Voter memory voter = voterManager.getVoterByAddress(sender);
         if (voter.hasVoted) revert VoterAlreadyVoted();
 
         if (keccak256(bytes(voter.nik)) != keccak256(bytes(voterNik))) revert NIKMismatch();
 
+        // Update vote count in storage
+        election.voteCount += 1;
+
+        // Update vote count in array
         for (uint i = 0; i < electionAddressArray.length; i++) {
             if (keccak256(bytes(electionAddressArray[i].electionNo)) == keccak256(bytes(electionNo))) {
-                electionAddressArray[i].voteCount+= 1;
+                electionAddressArray[i].voteCount += 1;
                 break;
             }
         }
@@ -125,5 +134,33 @@ contract ElectionManager is IElectionManager {
             }
         }
         revert InvalidElection();
+    }
+
+    /**
+     * @dev Add a trusted forwarder for gasless transactions
+     */
+    function addTrustedForwarder(address forwarder) external onlyKpuAdmin {
+        _addTrustedForwarder(forwarder);
+    }
+
+    /**
+     * @dev Remove a trusted forwarder
+     */
+    function removeTrustedForwarder(address forwarder) external onlyKpuAdmin {
+        _removeTrustedForwarder(forwarder);
+    }
+
+    /**
+     * @dev Override to use the correct _msgSender implementation
+     */
+    function _msgSender() internal view override returns (address) {
+        return MultiERC2771Context._msgSender();
+    }
+
+    /**
+     * @dev Override to use the correct _msgData implementation
+     */
+    function _msgData() internal view override returns (bytes calldata) {
+        return MultiERC2771Context._msgData();
     }
 }

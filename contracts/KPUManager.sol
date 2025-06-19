@@ -3,8 +3,9 @@ pragma solidity ^0.8.25;
 
 import "./Interfaces.sol";
 import "./VotechainBase.sol";
+import "./Context.sol";
 
-contract KPUManager is IKPUManager{
+contract KPUManager is IKPUManager, MultiERC2771Context {
 
     error OnlyKpuProvinsi();
     error OnlyKpuKota();
@@ -30,21 +31,24 @@ contract KPUManager is IKPUManager{
     event KPUKotaUpdated(address indexed Address, string name, string region);
 
     modifier onlyKpuAdmin() {
-        if (msg.sender != base.kpuAdmin()) revert OnlyKpuProvinsi();
+        if (_msgSender() != base.kpuAdmin()) revert OnlyKpuProvinsi();
         _;
     }
 
     modifier onlyKpuProvinsi() {
-        if (!_kpuProvinsi[msg.sender].isActive) revert OnlyKpuProvinsi();
+        if (!_kpuProvinsi[_msgSender()].isActive) revert OnlyKpuProvinsi();
         _;
     }
 
     modifier onlyKpuKota(){
-        if (!_kpuKota[msg.sender].isActive) revert OnlyKpuKota();
+        if (!_kpuKota[_msgSender()].isActive) revert OnlyKpuKota();
         _;
     }
 
-    constructor(address _baseAddress) {
+    constructor(
+        address _baseAddress,
+        address[] memory trustedForwarders
+    ) MultiERC2771Context(trustedForwarders) {
         base = IVotechainBase(_baseAddress);
     }
 
@@ -168,5 +172,33 @@ contract KPUManager is IKPUManager{
         }
 
         emit KPUKotaUpdated(Address, name, region);
+    }
+
+    /**
+     * @dev Add a trusted forwarder for gasless transactions
+     */
+    function addTrustedForwarder(address forwarder) external onlyKpuAdmin {
+        _addTrustedForwarder(forwarder);
+    }
+
+    /**
+     * @dev Remove a trusted forwarder
+     */
+    function removeTrustedForwarder(address forwarder) external onlyKpuAdmin {
+        _removeTrustedForwarder(forwarder);
+    }
+
+    /**
+     * @dev Override to use the correct _msgSender implementation
+     */
+    function _msgSender() internal view override returns (address) {
+        return MultiERC2771Context._msgSender();
+    }
+
+    /**
+     * @dev Override to use the correct _msgData implementation
+     */
+    function _msgData() internal view override returns (bytes calldata) {
+        return MultiERC2771Context._msgData();
     }
 }

@@ -1,0 +1,16 @@
+{
+  "network": "development",
+  "deployer": "0x6970322e22A7C880A9385E80017ff7A9489f683b",
+  "timestamp": "2025-06-19T05:01:55.029Z",
+  "contracts": {
+    "VotechainBase": "0xa64392f7C83B093631A4B90A9b47752Ff939C43a",
+    "KPUManager": "0x49D4676Ca3c329c8Ba3D98E5c2ddcB4E587C032b",
+    "VoterManager": "0x2fBfC3C85B1f8E8f6FC994c54610387881E96181",
+    "ElectionManager": "0x626b00c42351F35E48ea0b4a434c0E163eD1e2C7",
+    "Votechain": "0xd9c8C8f99F16f71EE133c9993A07CBB4a0b7c540"
+  },
+  "trustedForwarders": [
+    "0xF63B38349538202bB2444BD6928e11F2ff68f239"
+  ],
+  "gasUsed": {}
+}

@@ -2,15 +2,14 @@
 pragma solidity ^0.8.25;
 
 import "./Interfaces.sol";
+import "./Context.sol";
 
-contract VoterManager is IVoterManager {
+contract VoterManager is IVoterManager, MultiERC2771Context {
     error VoterAlreadyRegistered();
     error AddressAlreadyRegistered();
     error VoterNotRegistered();
     error AlreadyVoted();
     error UnauthorizedKPU();
-
-
 
     IVotechainBase public base;
     IKPUManager public kpuManager;
@@ -22,8 +21,11 @@ contract VoterManager is IVoterManager {
     event VoterRegistered(string indexed nik, address indexed voterAddress, string region);
     event VoterMarkedAsVoted(address indexed voterAddress, string indexed nik);
 
-
-    constructor(address _baseAddress, address _kpuManagerAddress) {
+    constructor(
+        address _baseAddress,
+        address _kpuManagerAddress,
+        address[] memory trustedForwarders
+    ) MultiERC2771Context(trustedForwarders) {
         base = IVotechainBase(_baseAddress);
         kpuManager = IKPUManager(_kpuManagerAddress);
     }
@@ -37,7 +39,7 @@ contract VoterManager is IVoterManager {
     }
 
     modifier onlyKpuKota() {
-        if (!kpuManager.isKPUKota(msg.sender)) revert UnauthorizedKPU();
+        if (!kpuManager.isKPUKota(_msgSender())) revert UnauthorizedKPU();
         _;
     }
 
@@ -48,7 +50,7 @@ contract VoterManager is IVoterManager {
         if (_voterss[nik].isRegistered) revert VoterAlreadyRegistered();
         if (bytes(_voterNIKByAddresses[voterAddress]).length != 0) revert AddressAlreadyRegistered();
 
-        string memory region = kpuManager.getKpuKotaRegion(msg.sender);
+        string memory region = kpuManager.getKpuKotaRegion(_msgSender());
 
         Voter memory newVoter = Voter({
             nik: nik,
@@ -122,5 +124,37 @@ contract VoterManager is IVoterManager {
             }
         }
         return regionVoters;
+    }
+
+    /**
+     * @dev Add a trusted forwarder for gasless transactions
+     */
+    function addTrustedForwarder(address forwarder) external {
+        // Only KPU admin should be able to do this
+        if (_msgSender() != base.kpuAdmin()) revert UnauthorizedKPU();
+        _addTrustedForwarder(forwarder);
+    }
+
+    /**
+     * @dev Remove a trusted forwarder
+     */
+    function removeTrustedForwarder(address forwarder) external {
+        // Only KPU admin should be able to do this
+        if (_msgSender() != base.kpuAdmin()) revert UnauthorizedKPU();
+        _removeTrustedForwarder(forwarder);
+    }
+
+    /**
+     * @dev Override to use the correct _msgSender implementation
+     */
+    function _msgSender() internal view override returns (address) {
+        return MultiERC2771Context._msgSender();
+    }
+
+    /**
+     * @dev Override to use the correct _msgData implementation
+     */
+    function _msgData() internal view override returns (bytes calldata) {
+        return MultiERC2771Context._msgData();
     }
 }
