@@ -250,24 +250,24 @@
     "absolutePath": "project:/contracts/Interfaces.sol",
     "exportedSymbols": {
       "IElectionManager": [
-        1181
+        7192
       ],
       "IKPUManager": [
-        1060
+        7071
       ],
       "IVotechainBase": [
-        928
+        6939
       ],
       "IVoterManager": [
-        1125
+        7136
       ]
     },
-    "id": 1182,
+    "id": 7193,
     "license": "UNLICENSED",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 907,
+        "id": 6918,
         "literals": [
           "solidity",
           "^",
@@ -275,7 +275,7 @@
           ".25"
         ],
         "nodeType": "PragmaDirective",
-        "src": "40:24:2"
+        "src": "40:24:13"
       },
       {
         "abstract": false,
@@ -284,42 +284,42 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 928,
+        "id": 6939,
         "linearizedBaseContracts": [
-          928
+          6939
         ],
         "name": "IVotechainBase",
-        "nameLocation": "78:14:2",
+        "nameLocation": "78:14:13",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "fb4ab164",
-            "id": 912,
+            "id": 6923,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "kpuAdmin",
-            "nameLocation": "109:8:2",
+            "nameLocation": "109:8:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 908,
+              "id": 6919,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "117:2:2"
+              "src": "117:2:13"
             },
             "returnParameters": {
-              "id": 911,
+              "id": 6922,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 910,
+                  "id": 6921,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 912,
-                  "src": "143:7:2",
+                  "scope": 6923,
+                  "src": "143:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -327,10 +327,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 909,
+                    "id": 6920,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "143:7:2",
+                    "src": "143:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -340,42 +340,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "142:9:2"
+              "src": "142:9:13"
             },
-            "scope": 928,
-            "src": "100:52:2",
+            "scope": 6939,
+            "src": "100:52:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "408e2727",
-            "id": 917,
+            "id": 6928,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "votingActive",
-            "nameLocation": "167:12:2",
+            "nameLocation": "167:12:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 913,
+              "id": 6924,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "179:2:2"
+              "src": "179:2:13"
             },
             "returnParameters": {
-              "id": 916,
+              "id": 6927,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 915,
+                  "id": 6926,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 917,
-                  "src": "205:4:2",
+                  "scope": 6928,
+                  "src": "205:4:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -383,10 +383,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 914,
+                    "id": 6925,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "205:4:2",
+                    "src": "205:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -395,36 +395,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "204:6:2"
+              "src": "204:6:13"
             },
-            "scope": 928,
-            "src": "158:53:2",
+            "scope": 6939,
+            "src": "158:53:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "7478c9fe",
-            "id": 922,
+            "id": 6933,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setVotingStatus",
-            "nameLocation": "226:15:2",
+            "nameLocation": "226:15:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 920,
+              "id": 6931,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 919,
+                  "id": 6930,
                   "mutability": "mutable",
                   "name": "status",
-                  "nameLocation": "247:6:2",
+                  "nameLocation": "247:6:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 922,
-                  "src": "242:11:2",
+                  "scope": 6933,
+                  "src": "242:11:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -432,10 +432,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 918,
+                    "id": 6929,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "242:4:2",
+                    "src": "242:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -444,42 +444,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "241:13:2"
+              "src": "241:13:13"
             },
             "returnParameters": {
-              "id": 921,
+              "id": 6932,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "263:0:2"
+              "src": "263:0:13"
             },
-            "scope": 928,
-            "src": "217:47:2",
+            "scope": 6939,
+            "src": "217:47:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "9df86dc1",
-            "id": 927,
+            "id": 6938,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setKpuAdmin",
-            "nameLocation": "279:11:2",
+            "nameLocation": "279:11:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 925,
+              "id": 6936,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 924,
+                  "id": 6935,
                   "mutability": "mutable",
                   "name": "newAdmin",
-                  "nameLocation": "299:8:2",
+                  "nameLocation": "299:8:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 927,
-                  "src": "291:16:2",
+                  "scope": 6938,
+                  "src": "291:16:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -487,10 +487,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 923,
+                    "id": 6934,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "291:7:2",
+                    "src": "291:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -500,23 +500,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "290:18:2"
+              "src": "290:18:13"
             },
             "returnParameters": {
-              "id": 926,
+              "id": 6937,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "317:0:2"
+              "src": "317:0:13"
             },
-            "scope": 928,
-            "src": "270:48:2",
+            "scope": 6939,
+            "src": "270:48:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1182,
-        "src": "68:253:2",
+        "scope": 7193,
+        "src": "68:253:13",
         "usedErrors": [],
         "usedEvents": []
       },
@@ -527,27 +527,27 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 1060,
+        "id": 7071,
         "linearizedBaseContracts": [
-          1060
+          7071
         ],
         "name": "IKPUManager",
-        "nameLocation": "335:11:2",
+        "nameLocation": "335:11:13",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "IKPUManager.KPUProvinsi",
-            "id": 937,
+            "id": 6948,
             "members": [
               {
                 "constant": false,
-                "id": 930,
+                "id": 6941,
                 "mutability": "mutable",
                 "name": "name",
-                "nameLocation": "391:4:2",
+                "nameLocation": "391:4:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 937,
-                "src": "384:11:2",
+                "scope": 6948,
+                "src": "384:11:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -555,10 +555,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 929,
+                  "id": 6940,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "384:6:2",
+                  "src": "384:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -568,13 +568,13 @@
               },
               {
                 "constant": false,
-                "id": 932,
+                "id": 6943,
                 "mutability": "mutable",
                 "name": "Address",
-                "nameLocation": "414:7:2",
+                "nameLocation": "414:7:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 937,
-                "src": "406:15:2",
+                "scope": 6948,
+                "src": "406:15:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -582,10 +582,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 931,
+                  "id": 6942,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "406:7:2",
+                  "src": "406:7:13",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -596,13 +596,13 @@
               },
               {
                 "constant": false,
-                "id": 934,
+                "id": 6945,
                 "mutability": "mutable",
                 "name": "isActive",
-                "nameLocation": "437:8:2",
+                "nameLocation": "437:8:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 937,
-                "src": "432:13:2",
+                "scope": 6948,
+                "src": "432:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -610,10 +610,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 933,
+                  "id": 6944,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "432:4:2",
+                  "src": "432:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -623,13 +623,13 @@
               },
               {
                 "constant": false,
-                "id": 936,
+                "id": 6947,
                 "mutability": "mutable",
                 "name": "region",
-                "nameLocation": "463:6:2",
+                "nameLocation": "463:6:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 937,
-                "src": "456:13:2",
+                "scope": 6948,
+                "src": "456:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -637,10 +637,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 935,
+                  "id": 6946,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "456:6:2",
+                  "src": "456:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -650,25 +650,25 @@
               }
             ],
             "name": "KPUProvinsi",
-            "nameLocation": "361:11:2",
+            "nameLocation": "361:11:13",
             "nodeType": "StructDefinition",
-            "scope": 1060,
-            "src": "354:123:2",
+            "scope": 7071,
+            "src": "354:123:13",
             "visibility": "public"
           },
           {
             "canonicalName": "IKPUManager.KPUKota",
-            "id": 946,
+            "id": 6957,
             "members": [
               {
                 "constant": false,
-                "id": 939,
+                "id": 6950,
                 "mutability": "mutable",
                 "name": "name",
-                "nameLocation": "518:4:2",
+                "nameLocation": "518:4:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 946,
-                "src": "511:11:2",
+                "scope": 6957,
+                "src": "511:11:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -676,10 +676,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 938,
+                  "id": 6949,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "511:6:2",
+                  "src": "511:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -689,13 +689,13 @@
               },
               {
                 "constant": false,
-                "id": 941,
+                "id": 6952,
                 "mutability": "mutable",
                 "name": "Address",
-                "nameLocation": "541:7:2",
+                "nameLocation": "541:7:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 946,
-                "src": "533:15:2",
+                "scope": 6957,
+                "src": "533:15:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -703,10 +703,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 940,
+                  "id": 6951,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "533:7:2",
+                  "src": "533:7:13",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -717,13 +717,13 @@
               },
               {
                 "constant": false,
-                "id": 943,
+                "id": 6954,
                 "mutability": "mutable",
                 "name": "isActive",
-                "nameLocation": "564:8:2",
+                "nameLocation": "564:8:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 946,
-                "src": "559:13:2",
+                "scope": 6957,
+                "src": "559:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -731,10 +731,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 942,
+                  "id": 6953,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "559:4:2",
+                  "src": "559:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -744,13 +744,13 @@
               },
               {
                 "constant": false,
-                "id": 945,
+                "id": 6956,
                 "mutability": "mutable",
                 "name": "region",
-                "nameLocation": "590:6:2",
+                "nameLocation": "590:6:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 946,
-                "src": "583:13:2",
+                "scope": 6957,
+                "src": "583:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -758,10 +758,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 944,
+                  "id": 6955,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "583:6:2",
+                  "src": "583:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -771,34 +771,34 @@
               }
             ],
             "name": "KPUKota",
-            "nameLocation": "492:7:2",
+            "nameLocation": "492:7:13",
             "nodeType": "StructDefinition",
-            "scope": 1060,
-            "src": "485:119:2",
+            "scope": 7071,
+            "src": "485:119:13",
             "visibility": "public"
           },
           {
             "functionSelector": "f9cdd556",
-            "id": 954,
+            "id": 6965,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "kpuProvinsi",
-            "nameLocation": "621:11:2",
+            "nameLocation": "621:11:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 949,
+              "id": 6960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 948,
+                  "id": 6959,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 954,
-                  "src": "633:7:2",
+                  "scope": 6965,
+                  "src": "633:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -806,10 +806,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 947,
+                    "id": 6958,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "633:7:2",
+                    "src": "633:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -819,80 +819,80 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "632:9:2"
+              "src": "632:9:13"
             },
             "returnParameters": {
-              "id": 953,
+              "id": 6964,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 952,
+                  "id": 6963,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 954,
-                  "src": "665:18:2",
+                  "scope": 6965,
+                  "src": "665:18:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_KPUProvinsi_$937_memory_ptr",
+                    "typeIdentifier": "t_struct$_KPUProvinsi_$6948_memory_ptr",
                     "typeString": "struct IKPUManager.KPUProvinsi"
                   },
                   "typeName": {
-                    "id": 951,
+                    "id": 6962,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 950,
+                      "id": 6961,
                       "name": "KPUProvinsi",
                       "nameLocations": [
-                        "665:11:2"
+                        "665:11:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 937,
-                      "src": "665:11:2"
+                      "referencedDeclaration": 6948,
+                      "src": "665:11:13"
                     },
-                    "referencedDeclaration": 937,
-                    "src": "665:11:2",
+                    "referencedDeclaration": 6948,
+                    "src": "665:11:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_KPUProvinsi_$937_storage_ptr",
+                      "typeIdentifier": "t_struct$_KPUProvinsi_$6948_storage_ptr",
                       "typeString": "struct IKPUManager.KPUProvinsi"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "664:20:2"
+              "src": "664:20:13"
             },
-            "scope": 1060,
-            "src": "612:73:2",
+            "scope": 7071,
+            "src": "612:73:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "147d559b",
-            "id": 962,
+            "id": 6973,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "kpuKota",
-            "nameLocation": "700:7:2",
+            "nameLocation": "700:7:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 957,
+              "id": 6968,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 956,
+                  "id": 6967,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 962,
-                  "src": "708:7:2",
+                  "scope": 6973,
+                  "src": "708:7:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -900,10 +900,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 955,
+                    "id": 6966,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "708:7:2",
+                    "src": "708:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -913,80 +913,80 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "707:9:2"
+              "src": "707:9:13"
             },
             "returnParameters": {
-              "id": 961,
+              "id": 6972,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 960,
+                  "id": 6971,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 962,
-                  "src": "740:14:2",
+                  "scope": 6973,
+                  "src": "740:14:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_KPUKota_$946_memory_ptr",
+                    "typeIdentifier": "t_struct$_KPUKota_$6957_memory_ptr",
                     "typeString": "struct IKPUManager.KPUKota"
                   },
                   "typeName": {
-                    "id": 959,
+                    "id": 6970,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 958,
+                      "id": 6969,
                       "name": "KPUKota",
                       "nameLocations": [
-                        "740:7:2"
+                        "740:7:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 946,
-                      "src": "740:7:2"
+                      "referencedDeclaration": 6957,
+                      "src": "740:7:13"
                     },
-                    "referencedDeclaration": 946,
-                    "src": "740:7:2",
+                    "referencedDeclaration": 6957,
+                    "src": "740:7:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_KPUKota_$946_storage_ptr",
+                      "typeIdentifier": "t_struct$_KPUKota_$6957_storage_ptr",
                       "typeString": "struct IKPUManager.KPUKota"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "739:16:2"
+              "src": "739:16:13"
             },
-            "scope": 1060,
-            "src": "691:65:2",
+            "scope": 7071,
+            "src": "691:65:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "2db33a2f",
-            "id": 971,
+            "id": 6982,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerKPUProvinsi",
-            "nameLocation": "771:19:2",
+            "nameLocation": "771:19:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 969,
+              "id": 6980,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 964,
+                  "id": 6975,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "799:7:2",
+                  "nameLocation": "799:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 971,
-                  "src": "791:15:2",
+                  "scope": 6982,
+                  "src": "791:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -994,10 +994,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 963,
+                    "id": 6974,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "791:7:2",
+                    "src": "791:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1008,13 +1008,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 966,
+                  "id": 6977,
                   "mutability": "mutable",
                   "name": "name",
-                  "nameLocation": "824:4:2",
+                  "nameLocation": "824:4:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 971,
-                  "src": "808:20:2",
+                  "scope": 6982,
+                  "src": "808:20:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1022,10 +1022,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 965,
+                    "id": 6976,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "808:6:2",
+                    "src": "808:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1035,13 +1035,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 968,
+                  "id": 6979,
                   "mutability": "mutable",
                   "name": "region",
-                  "nameLocation": "846:6:2",
+                  "nameLocation": "846:6:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 971,
-                  "src": "830:22:2",
+                  "scope": 6982,
+                  "src": "830:22:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1049,10 +1049,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 967,
+                    "id": 6978,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "830:6:2",
+                    "src": "830:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1061,42 +1061,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "790:63:2"
+              "src": "790:63:13"
             },
             "returnParameters": {
-              "id": 970,
+              "id": 6981,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "862:0:2"
+              "src": "862:0:13"
             },
-            "scope": 1060,
-            "src": "762:101:2",
+            "scope": 7071,
+            "src": "762:101:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "92423815",
-            "id": 980,
+            "id": 6991,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerKPUKota",
-            "nameLocation": "878:15:2",
+            "nameLocation": "878:15:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 978,
+              "id": 6989,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 973,
+                  "id": 6984,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "902:7:2",
+                  "nameLocation": "902:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 980,
-                  "src": "894:15:2",
+                  "scope": 6991,
+                  "src": "894:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1104,10 +1104,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 972,
+                    "id": 6983,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "894:7:2",
+                    "src": "894:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1118,13 +1118,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 975,
+                  "id": 6986,
                   "mutability": "mutable",
                   "name": "name",
-                  "nameLocation": "927:4:2",
+                  "nameLocation": "927:4:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 980,
-                  "src": "911:20:2",
+                  "scope": 6991,
+                  "src": "911:20:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1132,10 +1132,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 974,
+                    "id": 6985,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "911:6:2",
+                    "src": "911:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1145,13 +1145,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 977,
+                  "id": 6988,
                   "mutability": "mutable",
                   "name": "region",
-                  "nameLocation": "949:6:2",
+                  "nameLocation": "949:6:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 980,
-                  "src": "933:22:2",
+                  "scope": 6991,
+                  "src": "933:22:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1159,10 +1159,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 976,
+                    "id": 6987,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "933:6:2",
+                    "src": "933:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1171,42 +1171,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "893:63:2"
+              "src": "893:63:13"
             },
             "returnParameters": {
-              "id": 979,
+              "id": 6990,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "965:0:2"
+              "src": "965:0:13"
             },
-            "scope": 1060,
-            "src": "869:97:2",
+            "scope": 7071,
+            "src": "869:97:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "356b0480",
-            "id": 985,
+            "id": 6996,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "deactivateKPUProvinsi",
-            "nameLocation": "981:21:2",
+            "nameLocation": "981:21:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 983,
+              "id": 6994,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 982,
+                  "id": 6993,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "1011:7:2",
+                  "nameLocation": "1011:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 985,
-                  "src": "1003:15:2",
+                  "scope": 6996,
+                  "src": "1003:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1214,10 +1214,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 981,
+                    "id": 6992,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1003:7:2",
+                    "src": "1003:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1227,42 +1227,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1002:17:2"
+              "src": "1002:17:13"
             },
             "returnParameters": {
-              "id": 984,
+              "id": 6995,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1028:0:2"
+              "src": "1028:0:13"
             },
-            "scope": 1060,
-            "src": "972:57:2",
+            "scope": 7071,
+            "src": "972:57:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "cea41469",
-            "id": 990,
+            "id": 7001,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "deactivateKPUKota",
-            "nameLocation": "1044:17:2",
+            "nameLocation": "1044:17:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 988,
+              "id": 6999,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 987,
+                  "id": 6998,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "1070:7:2",
+                  "nameLocation": "1070:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 990,
-                  "src": "1062:15:2",
+                  "scope": 7001,
+                  "src": "1062:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1270,10 +1270,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 986,
+                    "id": 6997,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1062:7:2",
+                    "src": "1062:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1283,42 +1283,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1061:17:2"
+              "src": "1061:17:13"
             },
             "returnParameters": {
-              "id": 989,
+              "id": 7000,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1087:0:2"
+              "src": "1087:0:13"
             },
-            "scope": 1060,
-            "src": "1035:53:2",
+            "scope": 7071,
+            "src": "1035:53:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "75a4352f",
-            "id": 997,
+            "id": 7008,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isKPUKota",
-            "nameLocation": "1103:9:2",
+            "nameLocation": "1103:9:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 993,
+              "id": 7004,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 992,
+                  "id": 7003,
                   "mutability": "mutable",
                   "name": "kpuAddress",
-                  "nameLocation": "1121:10:2",
+                  "nameLocation": "1121:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 997,
-                  "src": "1113:18:2",
+                  "scope": 7008,
+                  "src": "1113:18:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1326,10 +1326,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 991,
+                    "id": 7002,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1113:7:2",
+                    "src": "1113:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1339,21 +1339,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1112:20:2"
+              "src": "1112:20:13"
             },
             "returnParameters": {
-              "id": 996,
+              "id": 7007,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 995,
+                  "id": 7006,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 997,
-                  "src": "1156:4:2",
+                  "scope": 7008,
+                  "src": "1156:4:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1361,10 +1361,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 994,
+                    "id": 7005,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1156:4:2",
+                    "src": "1156:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1373,36 +1373,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1155:6:2"
+              "src": "1155:6:13"
             },
-            "scope": 1060,
-            "src": "1094:68:2",
+            "scope": 7071,
+            "src": "1094:68:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "df3aae0b",
-            "id": 1004,
+            "id": 7015,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "isKPUProvinsi",
-            "nameLocation": "1177:13:2",
+            "nameLocation": "1177:13:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1000,
+              "id": 7011,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 999,
+                  "id": 7010,
                   "mutability": "mutable",
                   "name": "kpuAddress",
-                  "nameLocation": "1199:10:2",
+                  "nameLocation": "1199:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1004,
-                  "src": "1191:18:2",
+                  "scope": 7015,
+                  "src": "1191:18:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1410,10 +1410,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 998,
+                    "id": 7009,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1191:7:2",
+                    "src": "1191:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1423,21 +1423,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1190:20:2"
+              "src": "1190:20:13"
             },
             "returnParameters": {
-              "id": 1003,
+              "id": 7014,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1002,
+                  "id": 7013,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1004,
-                  "src": "1234:4:2",
+                  "scope": 7015,
+                  "src": "1234:4:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1445,10 +1445,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1001,
+                    "id": 7012,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1234:4:2",
+                    "src": "1234:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1457,36 +1457,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1233:6:2"
+              "src": "1233:6:13"
             },
-            "scope": 1060,
-            "src": "1168:72:2",
+            "scope": 7071,
+            "src": "1168:72:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "74c80380",
-            "id": 1011,
+            "id": 7022,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getKpuKotaRegion",
-            "nameLocation": "1255:16:2",
+            "nameLocation": "1255:16:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1007,
+              "id": 7018,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1006,
+                  "id": 7017,
                   "mutability": "mutable",
                   "name": "kpuAddress",
-                  "nameLocation": "1280:10:2",
+                  "nameLocation": "1280:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1011,
-                  "src": "1272:18:2",
+                  "scope": 7022,
+                  "src": "1272:18:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1494,10 +1494,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1005,
+                    "id": 7016,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1272:7:2",
+                    "src": "1272:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1507,21 +1507,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1271:20:2"
+              "src": "1271:20:13"
             },
             "returnParameters": {
-              "id": 1010,
+              "id": 7021,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1009,
+                  "id": 7020,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1011,
-                  "src": "1315:13:2",
+                  "scope": 7022,
+                  "src": "1315:13:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1529,10 +1529,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1008,
+                    "id": 7019,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1315:6:2",
+                    "src": "1315:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1541,184 +1541,184 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1314:15:2"
+              "src": "1314:15:13"
             },
-            "scope": 1060,
-            "src": "1246:84:2",
+            "scope": 7071,
+            "src": "1246:84:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "56d35b51",
-            "id": 1018,
+            "id": 7029,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getAllKPUProvinsi",
-            "nameLocation": "1345:17:2",
+            "nameLocation": "1345:17:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1012,
+              "id": 7023,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1362:2:2"
+              "src": "1362:2:13"
             },
             "returnParameters": {
-              "id": 1017,
+              "id": 7028,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1016,
+                  "id": 7027,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1018,
-                  "src": "1388:20:2",
+                  "scope": 7029,
+                  "src": "1388:20:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_KPUProvinsi_$937_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_KPUProvinsi_$6948_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct IKPUManager.KPUProvinsi[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1014,
+                      "id": 7025,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 1013,
+                        "id": 7024,
                         "name": "KPUProvinsi",
                         "nameLocations": [
-                          "1388:11:2"
+                          "1388:11:13"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 937,
-                        "src": "1388:11:2"
+                        "referencedDeclaration": 6948,
+                        "src": "1388:11:13"
                       },
-                      "referencedDeclaration": 937,
-                      "src": "1388:11:2",
+                      "referencedDeclaration": 6948,
+                      "src": "1388:11:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_KPUProvinsi_$937_storage_ptr",
+                        "typeIdentifier": "t_struct$_KPUProvinsi_$6948_storage_ptr",
                         "typeString": "struct IKPUManager.KPUProvinsi"
                       }
                     },
-                    "id": 1015,
+                    "id": 7026,
                     "nodeType": "ArrayTypeName",
-                    "src": "1388:13:2",
+                    "src": "1388:13:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_KPUProvinsi_$937_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_KPUProvinsi_$6948_storage_$dyn_storage_ptr",
                       "typeString": "struct IKPUManager.KPUProvinsi[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1387:22:2"
+              "src": "1387:22:13"
             },
-            "scope": 1060,
-            "src": "1336:74:2",
+            "scope": 7071,
+            "src": "1336:74:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "b7a3418e",
-            "id": 1025,
+            "id": 7036,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getAllKPUKota",
-            "nameLocation": "1425:13:2",
+            "nameLocation": "1425:13:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1019,
+              "id": 7030,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1438:2:2"
+              "src": "1438:2:13"
             },
             "returnParameters": {
-              "id": 1024,
+              "id": 7035,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1023,
+                  "id": 7034,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1025,
-                  "src": "1464:16:2",
+                  "scope": 7036,
+                  "src": "1464:16:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_KPUKota_$946_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_KPUKota_$6957_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct IKPUManager.KPUKota[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1021,
+                      "id": 7032,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 1020,
+                        "id": 7031,
                         "name": "KPUKota",
                         "nameLocations": [
-                          "1464:7:2"
+                          "1464:7:13"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 946,
-                        "src": "1464:7:2"
+                        "referencedDeclaration": 6957,
+                        "src": "1464:7:13"
                       },
-                      "referencedDeclaration": 946,
-                      "src": "1464:7:2",
+                      "referencedDeclaration": 6957,
+                      "src": "1464:7:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_KPUKota_$946_storage_ptr",
+                        "typeIdentifier": "t_struct$_KPUKota_$6957_storage_ptr",
                         "typeString": "struct IKPUManager.KPUKota"
                       }
                     },
-                    "id": 1022,
+                    "id": 7033,
                     "nodeType": "ArrayTypeName",
-                    "src": "1464:9:2",
+                    "src": "1464:9:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_KPUKota_$946_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_KPUKota_$6957_storage_$dyn_storage_ptr",
                       "typeString": "struct IKPUManager.KPUKota[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1463:18:2"
+              "src": "1463:18:13"
             },
-            "scope": 1060,
-            "src": "1416:66:2",
+            "scope": 7071,
+            "src": "1416:66:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "9424ab90",
-            "id": 1033,
+            "id": 7044,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getKpuProvinsiByAddress",
-            "nameLocation": "1497:23:2",
+            "nameLocation": "1497:23:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1028,
+              "id": 7039,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1027,
+                  "id": 7038,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "1529:7:2",
+                  "nameLocation": "1529:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1033,
-                  "src": "1521:15:2",
+                  "scope": 7044,
+                  "src": "1521:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1726,10 +1726,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1026,
+                    "id": 7037,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1521:7:2",
+                    "src": "1521:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1739,80 +1739,80 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1520:17:2"
+              "src": "1520:17:13"
             },
             "returnParameters": {
-              "id": 1032,
+              "id": 7043,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1031,
+                  "id": 7042,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1033,
-                  "src": "1561:18:2",
+                  "scope": 7044,
+                  "src": "1561:18:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_KPUProvinsi_$937_memory_ptr",
+                    "typeIdentifier": "t_struct$_KPUProvinsi_$6948_memory_ptr",
                     "typeString": "struct IKPUManager.KPUProvinsi"
                   },
                   "typeName": {
-                    "id": 1030,
+                    "id": 7041,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1029,
+                      "id": 7040,
                       "name": "KPUProvinsi",
                       "nameLocations": [
-                        "1561:11:2"
+                        "1561:11:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 937,
-                      "src": "1561:11:2"
+                      "referencedDeclaration": 6948,
+                      "src": "1561:11:13"
                     },
-                    "referencedDeclaration": 937,
-                    "src": "1561:11:2",
+                    "referencedDeclaration": 6948,
+                    "src": "1561:11:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_KPUProvinsi_$937_storage_ptr",
+                      "typeIdentifier": "t_struct$_KPUProvinsi_$6948_storage_ptr",
                       "typeString": "struct IKPUManager.KPUProvinsi"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1560:20:2"
+              "src": "1560:20:13"
             },
-            "scope": 1060,
-            "src": "1488:93:2",
+            "scope": 7071,
+            "src": "1488:93:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "6fee7d58",
-            "id": 1041,
+            "id": 7052,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getKpuKotaByAddress",
-            "nameLocation": "1596:19:2",
+            "nameLocation": "1596:19:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1036,
+              "id": 7047,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1035,
+                  "id": 7046,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "1624:7:2",
+                  "nameLocation": "1624:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1041,
-                  "src": "1616:15:2",
+                  "scope": 7052,
+                  "src": "1616:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1820,10 +1820,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1034,
+                    "id": 7045,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1616:7:2",
+                    "src": "1616:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1833,80 +1833,80 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1615:17:2"
+              "src": "1615:17:13"
             },
             "returnParameters": {
-              "id": 1040,
+              "id": 7051,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1039,
+                  "id": 7050,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1041,
-                  "src": "1656:14:2",
+                  "scope": 7052,
+                  "src": "1656:14:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_KPUKota_$946_memory_ptr",
+                    "typeIdentifier": "t_struct$_KPUKota_$6957_memory_ptr",
                     "typeString": "struct IKPUManager.KPUKota"
                   },
                   "typeName": {
-                    "id": 1038,
+                    "id": 7049,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1037,
+                      "id": 7048,
                       "name": "KPUKota",
                       "nameLocations": [
-                        "1656:7:2"
+                        "1656:7:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 946,
-                      "src": "1656:7:2"
+                      "referencedDeclaration": 6957,
+                      "src": "1656:7:13"
                     },
-                    "referencedDeclaration": 946,
-                    "src": "1656:7:2",
+                    "referencedDeclaration": 6957,
+                    "src": "1656:7:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_KPUKota_$946_storage_ptr",
+                      "typeIdentifier": "t_struct$_KPUKota_$6957_storage_ptr",
                       "typeString": "struct IKPUManager.KPUKota"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1655:16:2"
+              "src": "1655:16:13"
             },
-            "scope": 1060,
-            "src": "1587:85:2",
+            "scope": 7071,
+            "src": "1587:85:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "02819b99",
-            "id": 1050,
+            "id": 7061,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "updateKPUProvinsi",
-            "nameLocation": "1687:17:2",
+            "nameLocation": "1687:17:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1048,
+              "id": 7059,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1043,
+                  "id": 7054,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "1713:7:2",
+                  "nameLocation": "1713:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1050,
-                  "src": "1705:15:2",
+                  "scope": 7061,
+                  "src": "1705:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1914,10 +1914,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1042,
+                    "id": 7053,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1705:7:2",
+                    "src": "1705:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1928,13 +1928,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1045,
+                  "id": 7056,
                   "mutability": "mutable",
                   "name": "name",
-                  "nameLocation": "1738:4:2",
+                  "nameLocation": "1738:4:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1050,
-                  "src": "1722:20:2",
+                  "scope": 7061,
+                  "src": "1722:20:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1942,10 +1942,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1044,
+                    "id": 7055,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1722:6:2",
+                    "src": "1722:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1955,13 +1955,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1047,
+                  "id": 7058,
                   "mutability": "mutable",
                   "name": "region",
-                  "nameLocation": "1760:6:2",
+                  "nameLocation": "1760:6:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1050,
-                  "src": "1744:22:2",
+                  "scope": 7061,
+                  "src": "1744:22:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1969,10 +1969,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1046,
+                    "id": 7057,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1744:6:2",
+                    "src": "1744:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1981,42 +1981,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1704:63:2"
+              "src": "1704:63:13"
             },
             "returnParameters": {
-              "id": 1049,
+              "id": 7060,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1776:0:2"
+              "src": "1776:0:13"
             },
-            "scope": 1060,
-            "src": "1678:99:2",
+            "scope": 7071,
+            "src": "1678:99:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "4da1b97a",
-            "id": 1059,
+            "id": 7070,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "updateKPUKota",
-            "nameLocation": "1792:13:2",
+            "nameLocation": "1792:13:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1057,
+              "id": 7068,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1052,
+                  "id": 7063,
                   "mutability": "mutable",
                   "name": "Address",
-                  "nameLocation": "1814:7:2",
+                  "nameLocation": "1814:7:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1059,
-                  "src": "1806:15:2",
+                  "scope": 7070,
+                  "src": "1806:15:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2024,10 +2024,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1051,
+                    "id": 7062,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1806:7:2",
+                    "src": "1806:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2038,13 +2038,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1054,
+                  "id": 7065,
                   "mutability": "mutable",
                   "name": "name",
-                  "nameLocation": "1839:4:2",
+                  "nameLocation": "1839:4:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1059,
-                  "src": "1823:20:2",
+                  "scope": 7070,
+                  "src": "1823:20:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2052,10 +2052,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1053,
+                    "id": 7064,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1823:6:2",
+                    "src": "1823:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2065,13 +2065,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1056,
+                  "id": 7067,
                   "mutability": "mutable",
                   "name": "region",
-                  "nameLocation": "1861:6:2",
+                  "nameLocation": "1861:6:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1059,
-                  "src": "1845:22:2",
+                  "scope": 7070,
+                  "src": "1845:22:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2079,10 +2079,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1055,
+                    "id": 7066,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1845:6:2",
+                    "src": "1845:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2091,23 +2091,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1805:63:2"
+              "src": "1805:63:13"
             },
             "returnParameters": {
-              "id": 1058,
+              "id": 7069,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1877:0:2"
+              "src": "1877:0:13"
             },
-            "scope": 1060,
-            "src": "1783:95:2",
+            "scope": 7071,
+            "src": "1783:95:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1182,
-        "src": "325:1556:2",
+        "scope": 7193,
+        "src": "325:1556:13",
         "usedErrors": [],
         "usedEvents": []
       },
@@ -2118,27 +2118,27 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 1125,
+        "id": 7136,
         "linearizedBaseContracts": [
-          1125
+          7136
         ],
         "name": "IVoterManager",
-        "nameLocation": "1895:13:2",
+        "nameLocation": "1895:13:13",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "IVoterManager.Voter",
-            "id": 1071,
+            "id": 7082,
             "members": [
               {
                 "constant": false,
-                "id": 1062,
+                "id": 7073,
                 "mutability": "mutable",
                 "name": "nik",
-                "nameLocation": "1947:3:2",
+                "nameLocation": "1947:3:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1071,
-                "src": "1940:10:2",
+                "scope": 7082,
+                "src": "1940:10:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2146,10 +2146,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1061,
+                  "id": 7072,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1940:6:2",
+                  "src": "1940:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -2159,13 +2159,13 @@
               },
               {
                 "constant": false,
-                "id": 1064,
+                "id": 7075,
                 "mutability": "mutable",
                 "name": "voterAddress",
-                "nameLocation": "1969:12:2",
+                "nameLocation": "1969:12:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1071,
-                "src": "1961:20:2",
+                "scope": 7082,
+                "src": "1961:20:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2173,10 +2173,10 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 1063,
+                  "id": 7074,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1961:7:2",
+                  "src": "1961:7:13",
                   "stateMutability": "nonpayable",
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -2187,13 +2187,13 @@
               },
               {
                 "constant": false,
-                "id": 1066,
+                "id": 7077,
                 "mutability": "mutable",
                 "name": "hasVoted",
-                "nameLocation": "1997:8:2",
+                "nameLocation": "1997:8:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1071,
-                "src": "1992:13:2",
+                "scope": 7082,
+                "src": "1992:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2201,10 +2201,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1065,
+                  "id": 7076,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1992:4:2",
+                  "src": "1992:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -2214,13 +2214,13 @@
               },
               {
                 "constant": false,
-                "id": 1068,
+                "id": 7079,
                 "mutability": "mutable",
                 "name": "region",
-                "nameLocation": "2023:6:2",
+                "nameLocation": "2023:6:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1071,
-                "src": "2016:13:2",
+                "scope": 7082,
+                "src": "2016:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2228,10 +2228,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1067,
+                  "id": 7078,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2016:6:2",
+                  "src": "2016:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -2241,13 +2241,13 @@
               },
               {
                 "constant": false,
-                "id": 1070,
+                "id": 7081,
                 "mutability": "mutable",
                 "name": "isRegistered",
-                "nameLocation": "2045:12:2",
+                "nameLocation": "2045:12:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1071,
-                "src": "2040:17:2",
+                "scope": 7082,
+                "src": "2040:17:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2255,10 +2255,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1069,
+                  "id": 7080,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2040:4:2",
+                  "src": "2040:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -2268,34 +2268,34 @@
               }
             ],
             "name": "Voter",
-            "nameLocation": "1923:5:2",
+            "nameLocation": "1923:5:13",
             "nodeType": "StructDefinition",
-            "scope": 1125,
-            "src": "1916:149:2",
+            "scope": 7136,
+            "src": "1916:149:13",
             "visibility": "public"
           },
           {
             "functionSelector": "4a075de2",
-            "id": 1078,
+            "id": 7089,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "registerVoter",
-            "nameLocation": "2082:13:2",
+            "nameLocation": "2082:13:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1076,
+              "id": 7087,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1073,
+                  "id": 7084,
                   "mutability": "mutable",
                   "name": "nik",
-                  "nameLocation": "2112:3:2",
+                  "nameLocation": "2112:3:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1078,
-                  "src": "2096:19:2",
+                  "scope": 7089,
+                  "src": "2096:19:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2303,10 +2303,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1072,
+                    "id": 7083,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2096:6:2",
+                    "src": "2096:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2316,13 +2316,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1075,
+                  "id": 7086,
                   "mutability": "mutable",
                   "name": "voterAddress",
-                  "nameLocation": "2125:12:2",
+                  "nameLocation": "2125:12:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1078,
-                  "src": "2117:20:2",
+                  "scope": 7089,
+                  "src": "2117:20:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2330,10 +2330,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1074,
+                    "id": 7085,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2117:7:2",
+                    "src": "2117:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2343,42 +2343,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2095:43:2"
+              "src": "2095:43:13"
             },
             "returnParameters": {
-              "id": 1077,
+              "id": 7088,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2147:0:2"
+              "src": "2147:0:13"
             },
-            "scope": 1125,
-            "src": "2073:75:2",
+            "scope": 7136,
+            "src": "2073:75:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "a8fd0cfa",
-            "id": 1085,
+            "id": 7096,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "markVoted",
-            "nameLocation": "2163:9:2",
+            "nameLocation": "2163:9:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1081,
+              "id": 7092,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1080,
+                  "id": 7091,
                   "mutability": "mutable",
                   "name": "voterAddress",
-                  "nameLocation": "2181:12:2",
+                  "nameLocation": "2181:12:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1085,
-                  "src": "2173:20:2",
+                  "scope": 7096,
+                  "src": "2173:20:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2386,10 +2386,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1079,
+                    "id": 7090,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2173:7:2",
+                    "src": "2173:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2399,21 +2399,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2172:22:2"
+              "src": "2172:22:13"
             },
             "returnParameters": {
-              "id": 1084,
+              "id": 7095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1083,
+                  "id": 7094,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1085,
-                  "src": "2213:4:2",
+                  "scope": 7096,
+                  "src": "2213:4:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2421,10 +2421,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 1082,
+                    "id": 7093,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2213:4:2",
+                    "src": "2213:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2433,36 +2433,36 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2212:6:2"
+              "src": "2212:6:13"
             },
-            "scope": 1125,
-            "src": "2154:65:2",
+            "scope": 7136,
+            "src": "2154:65:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "4bdd7585",
-            "id": 1093,
+            "id": 7104,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getVoterByAddress",
-            "nameLocation": "2234:17:2",
+            "nameLocation": "2234:17:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1088,
+              "id": 7099,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1087,
+                  "id": 7098,
                   "mutability": "mutable",
                   "name": "voterAddress",
-                  "nameLocation": "2260:12:2",
+                  "nameLocation": "2260:12:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1093,
-                  "src": "2252:20:2",
+                  "scope": 7104,
+                  "src": "2252:20:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2470,10 +2470,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1086,
+                    "id": 7097,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2252:7:2",
+                    "src": "2252:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2483,80 +2483,80 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2251:22:2"
+              "src": "2251:22:13"
             },
             "returnParameters": {
-              "id": 1092,
+              "id": 7103,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1091,
+                  "id": 7102,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1093,
-                  "src": "2297:12:2",
+                  "scope": 7104,
+                  "src": "2297:12:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Voter_$1071_memory_ptr",
+                    "typeIdentifier": "t_struct$_Voter_$7082_memory_ptr",
                     "typeString": "struct IVoterManager.Voter"
                   },
                   "typeName": {
-                    "id": 1090,
+                    "id": 7101,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1089,
+                      "id": 7100,
                       "name": "Voter",
                       "nameLocations": [
-                        "2297:5:2"
+                        "2297:5:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1071,
-                      "src": "2297:5:2"
+                      "referencedDeclaration": 7082,
+                      "src": "2297:5:13"
                     },
-                    "referencedDeclaration": 1071,
-                    "src": "2297:5:2",
+                    "referencedDeclaration": 7082,
+                    "src": "2297:5:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Voter_$1071_storage_ptr",
+                      "typeIdentifier": "t_struct$_Voter_$7082_storage_ptr",
                       "typeString": "struct IVoterManager.Voter"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "2296:14:2"
+              "src": "2296:14:13"
             },
-            "scope": 1125,
-            "src": "2225:86:2",
+            "scope": 7136,
+            "src": "2225:86:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "5130298f",
-            "id": 1100,
+            "id": 7111,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getVoterNikByAddress",
-            "nameLocation": "2326:20:2",
+            "nameLocation": "2326:20:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1096,
+              "id": 7107,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1095,
+                  "id": 7106,
                   "mutability": "mutable",
                   "name": "voterAddress",
-                  "nameLocation": "2355:12:2",
+                  "nameLocation": "2355:12:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1100,
-                  "src": "2347:20:2",
+                  "scope": 7111,
+                  "src": "2347:20:13",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2564,10 +2564,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1094,
+                    "id": 7105,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2347:7:2",
+                    "src": "2347:7:13",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2577,21 +2577,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2346:22:2"
+              "src": "2346:22:13"
             },
             "returnParameters": {
-              "id": 1099,
+              "id": 7110,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1098,
+                  "id": 7109,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1100,
-                  "src": "2392:13:2",
+                  "scope": 7111,
+                  "src": "2392:13:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2599,10 +2599,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1097,
+                    "id": 7108,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2392:6:2",
+                    "src": "2392:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2611,110 +2611,110 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2391:15:2"
+              "src": "2391:15:13"
             },
-            "scope": 1125,
-            "src": "2317:90:2",
+            "scope": 7136,
+            "src": "2317:90:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "f44f4e14",
-            "id": 1107,
+            "id": 7118,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getAllVoter",
-            "nameLocation": "2422:11:2",
+            "nameLocation": "2422:11:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1101,
+              "id": 7112,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2433:2:2"
+              "src": "2433:2:13"
             },
             "returnParameters": {
-              "id": 1106,
+              "id": 7117,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1105,
+                  "id": 7116,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1107,
-                  "src": "2459:14:2",
+                  "scope": 7118,
+                  "src": "2459:14:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Voter_$1071_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Voter_$7082_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct IVoterManager.Voter[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1103,
+                      "id": 7114,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 1102,
+                        "id": 7113,
                         "name": "Voter",
                         "nameLocations": [
-                          "2459:5:2"
+                          "2459:5:13"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 1071,
-                        "src": "2459:5:2"
+                        "referencedDeclaration": 7082,
+                        "src": "2459:5:13"
                       },
-                      "referencedDeclaration": 1071,
-                      "src": "2459:5:2",
+                      "referencedDeclaration": 7082,
+                      "src": "2459:5:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Voter_$1071_storage_ptr",
+                        "typeIdentifier": "t_struct$_Voter_$7082_storage_ptr",
                         "typeString": "struct IVoterManager.Voter"
                       }
                     },
-                    "id": 1104,
+                    "id": 7115,
                     "nodeType": "ArrayTypeName",
-                    "src": "2459:7:2",
+                    "src": "2459:7:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Voter_$1071_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Voter_$7082_storage_$dyn_storage_ptr",
                       "typeString": "struct IVoterManager.Voter[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "2458:16:2"
+              "src": "2458:16:13"
             },
-            "scope": 1125,
-            "src": "2413:62:2",
+            "scope": 7136,
+            "src": "2413:62:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "2a70ecca",
-            "id": 1115,
+            "id": 7126,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getVoterByNIK",
-            "nameLocation": "2490:13:2",
+            "nameLocation": "2490:13:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1110,
+              "id": 7121,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1109,
+                  "id": 7120,
                   "mutability": "mutable",
                   "name": "nik",
-                  "nameLocation": "2520:3:2",
+                  "nameLocation": "2520:3:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1115,
-                  "src": "2504:19:2",
+                  "scope": 7126,
+                  "src": "2504:19:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2722,10 +2722,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1108,
+                    "id": 7119,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2504:6:2",
+                    "src": "2504:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2734,80 +2734,80 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2503:21:2"
+              "src": "2503:21:13"
             },
             "returnParameters": {
-              "id": 1114,
+              "id": 7125,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1113,
+                  "id": 7124,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1115,
-                  "src": "2548:12:2",
+                  "scope": 7126,
+                  "src": "2548:12:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Voter_$1071_memory_ptr",
+                    "typeIdentifier": "t_struct$_Voter_$7082_memory_ptr",
                     "typeString": "struct IVoterManager.Voter"
                   },
                   "typeName": {
-                    "id": 1112,
+                    "id": 7123,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1111,
+                      "id": 7122,
                       "name": "Voter",
                       "nameLocations": [
-                        "2548:5:2"
+                        "2548:5:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1071,
-                      "src": "2548:5:2"
+                      "referencedDeclaration": 7082,
+                      "src": "2548:5:13"
                     },
-                    "referencedDeclaration": 1071,
-                    "src": "2548:5:2",
+                    "referencedDeclaration": 7082,
+                    "src": "2548:5:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Voter_$1071_storage_ptr",
+                      "typeIdentifier": "t_struct$_Voter_$7082_storage_ptr",
                       "typeString": "struct IVoterManager.Voter"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "2547:14:2"
+              "src": "2547:14:13"
             },
-            "scope": 1125,
-            "src": "2481:81:2",
+            "scope": 7136,
+            "src": "2481:81:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "e0d5343b",
-            "id": 1124,
+            "id": 7135,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getVoterByRegion",
-            "nameLocation": "2577:16:2",
+            "nameLocation": "2577:16:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1118,
+              "id": 7129,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1117,
+                  "id": 7128,
                   "mutability": "mutable",
                   "name": "region",
-                  "nameLocation": "2610:6:2",
+                  "nameLocation": "2610:6:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1124,
-                  "src": "2594:22:2",
+                  "scope": 7135,
+                  "src": "2594:22:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2815,10 +2815,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1116,
+                    "id": 7127,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2594:6:2",
+                    "src": "2594:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2827,70 +2827,70 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2593:24:2"
+              "src": "2593:24:13"
             },
             "returnParameters": {
-              "id": 1123,
+              "id": 7134,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1122,
+                  "id": 7133,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1124,
-                  "src": "2641:14:2",
+                  "scope": 7135,
+                  "src": "2641:14:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Voter_$1071_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Voter_$7082_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct IVoterManager.Voter[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1120,
+                      "id": 7131,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 1119,
+                        "id": 7130,
                         "name": "Voter",
                         "nameLocations": [
-                          "2641:5:2"
+                          "2641:5:13"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 1071,
-                        "src": "2641:5:2"
+                        "referencedDeclaration": 7082,
+                        "src": "2641:5:13"
                       },
-                      "referencedDeclaration": 1071,
-                      "src": "2641:5:2",
+                      "referencedDeclaration": 7082,
+                      "src": "2641:5:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Voter_$1071_storage_ptr",
+                        "typeIdentifier": "t_struct$_Voter_$7082_storage_ptr",
                         "typeString": "struct IVoterManager.Voter"
                       }
                     },
-                    "id": 1121,
+                    "id": 7132,
                     "nodeType": "ArrayTypeName",
-                    "src": "2641:7:2",
+                    "src": "2641:7:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Voter_$1071_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Voter_$7082_storage_$dyn_storage_ptr",
                       "typeString": "struct IVoterManager.Voter[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "2640:16:2"
+              "src": "2640:16:13"
             },
-            "scope": 1125,
-            "src": "2568:89:2",
+            "scope": 7136,
+            "src": "2568:89:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1182,
-        "src": "1885:775:2",
+        "scope": 7193,
+        "src": "1885:775:13",
         "usedErrors": [],
         "usedEvents": []
       },
@@ -2901,27 +2901,27 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 1181,
+        "id": 7192,
         "linearizedBaseContracts": [
-          1181
+          7192
         ],
         "name": "IElectionManager",
-        "nameLocation": "2674:16:2",
+        "nameLocation": "2674:16:13",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "IElectionManager.Election",
-            "id": 1134,
+            "id": 7145,
             "members": [
               {
                 "constant": false,
-                "id": 1127,
+                "id": 7138,
                 "mutability": "mutable",
                 "name": "id",
-                "nameLocation": "2732:2:2",
+                "nameLocation": "2732:2:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1134,
-                "src": "2725:9:2",
+                "scope": 7145,
+                "src": "2725:9:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2929,10 +2929,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1126,
+                  "id": 7137,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2725:6:2",
+                  "src": "2725:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -2942,13 +2942,13 @@
               },
               {
                 "constant": false,
-                "id": 1129,
+                "id": 7140,
                 "mutability": "mutable",
                 "name": "electionNo",
-                "nameLocation": "2752:10:2",
+                "nameLocation": "2752:10:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1134,
-                "src": "2745:17:2",
+                "scope": 7145,
+                "src": "2745:17:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2956,10 +2956,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 1128,
+                  "id": 7139,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2745:6:2",
+                  "src": "2745:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -2969,13 +2969,13 @@
               },
               {
                 "constant": false,
-                "id": 1131,
+                "id": 7142,
                 "mutability": "mutable",
                 "name": "voteCount",
-                "nameLocation": "2781:9:2",
+                "nameLocation": "2781:9:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1134,
-                "src": "2773:17:2",
+                "scope": 7145,
+                "src": "2773:17:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -2983,10 +2983,10 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1130,
+                  "id": 7141,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2773:7:2",
+                  "src": "2773:7:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -2996,13 +2996,13 @@
               },
               {
                 "constant": false,
-                "id": 1133,
+                "id": 7144,
                 "mutability": "mutable",
                 "name": "isActive",
-                "nameLocation": "2806:8:2",
+                "nameLocation": "2806:8:13",
                 "nodeType": "VariableDeclaration",
-                "scope": 1134,
-                "src": "2801:13:2",
+                "scope": 7145,
+                "src": "2801:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -3010,10 +3010,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 1132,
+                  "id": 7143,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "2801:4:2",
+                  "src": "2801:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -3023,34 +3023,34 @@
               }
             ],
             "name": "Election",
-            "nameLocation": "2705:8:2",
+            "nameLocation": "2705:8:13",
             "nodeType": "StructDefinition",
-            "scope": 1181,
-            "src": "2698:124:2",
+            "scope": 7192,
+            "src": "2698:124:13",
             "visibility": "public"
           },
           {
             "functionSelector": "95b79907",
-            "id": 1141,
+            "id": 7152,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "addElection",
-            "nameLocation": "2839:11:2",
+            "nameLocation": "2839:11:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1139,
+              "id": 7150,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1136,
+                  "id": 7147,
                   "mutability": "mutable",
                   "name": "electionId",
-                  "nameLocation": "2867:10:2",
+                  "nameLocation": "2867:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1141,
-                  "src": "2851:26:2",
+                  "scope": 7152,
+                  "src": "2851:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3058,10 +3058,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1135,
+                    "id": 7146,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2851:6:2",
+                    "src": "2851:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3071,13 +3071,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1138,
+                  "id": 7149,
                   "mutability": "mutable",
                   "name": "electionNo",
-                  "nameLocation": "2895:10:2",
+                  "nameLocation": "2895:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1141,
-                  "src": "2879:26:2",
+                  "scope": 7152,
+                  "src": "2879:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3085,10 +3085,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1137,
+                    "id": 7148,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2879:6:2",
+                    "src": "2879:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3097,42 +3097,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2850:56:2"
+              "src": "2850:56:13"
             },
             "returnParameters": {
-              "id": 1140,
+              "id": 7151,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2915:0:2"
+              "src": "2915:0:13"
             },
-            "scope": 1181,
-            "src": "2830:86:2",
+            "scope": 7192,
+            "src": "2830:86:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "a9d93bf0",
-            "id": 1148,
+            "id": 7159,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "toggleElectionActive",
-            "nameLocation": "2931:20:2",
+            "nameLocation": "2931:20:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1146,
+              "id": 7157,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1143,
+                  "id": 7154,
                   "mutability": "mutable",
                   "name": "electionId",
-                  "nameLocation": "2968:10:2",
+                  "nameLocation": "2968:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "2952:26:2",
+                  "scope": 7159,
+                  "src": "2952:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3140,10 +3140,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1142,
+                    "id": 7153,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2952:6:2",
+                    "src": "2952:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3153,13 +3153,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1145,
+                  "id": 7156,
                   "mutability": "mutable",
                   "name": "electionNo",
-                  "nameLocation": "2996:10:2",
+                  "nameLocation": "2996:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1148,
-                  "src": "2980:26:2",
+                  "scope": 7159,
+                  "src": "2980:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3167,10 +3167,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1144,
+                    "id": 7155,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2980:6:2",
+                    "src": "2980:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3179,42 +3179,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2951:56:2"
+              "src": "2951:56:13"
             },
             "returnParameters": {
-              "id": 1147,
+              "id": 7158,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3016:0:2"
+              "src": "3016:0:13"
             },
-            "scope": 1181,
-            "src": "2922:95:2",
+            "scope": 7192,
+            "src": "2922:95:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "95f59fe1",
-            "id": 1157,
+            "id": 7168,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "vote",
-            "nameLocation": "3032:4:2",
+            "nameLocation": "3032:4:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1155,
+              "id": 7166,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1150,
+                  "id": 7161,
                   "mutability": "mutable",
                   "name": "electionId",
-                  "nameLocation": "3053:10:2",
+                  "nameLocation": "3053:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1157,
-                  "src": "3037:26:2",
+                  "scope": 7168,
+                  "src": "3037:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3222,10 +3222,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1149,
+                    "id": 7160,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3037:6:2",
+                    "src": "3037:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3235,13 +3235,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1152,
+                  "id": 7163,
                   "mutability": "mutable",
                   "name": "electionNo",
-                  "nameLocation": "3081:10:2",
+                  "nameLocation": "3081:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1157,
-                  "src": "3065:26:2",
+                  "scope": 7168,
+                  "src": "3065:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3249,10 +3249,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1151,
+                    "id": 7162,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3065:6:2",
+                    "src": "3065:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3262,13 +3262,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1154,
+                  "id": 7165,
                   "mutability": "mutable",
                   "name": "voterNik",
-                  "nameLocation": "3107:8:2",
+                  "nameLocation": "3107:8:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1157,
-                  "src": "3093:22:2",
+                  "scope": 7168,
+                  "src": "3093:22:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3276,10 +3276,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1153,
+                    "id": 7164,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3093:6:2",
+                    "src": "3093:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3288,42 +3288,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3036:80:2"
+              "src": "3036:80:13"
             },
             "returnParameters": {
-              "id": 1156,
+              "id": 7167,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3125:0:2"
+              "src": "3125:0:13"
             },
-            "scope": 1181,
-            "src": "3023:103:2",
+            "scope": 7192,
+            "src": "3023:103:13",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "4771b573",
-            "id": 1165,
+            "id": 7176,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getElection",
-            "nameLocation": "3141:11:2",
+            "nameLocation": "3141:11:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1160,
+              "id": 7171,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1159,
+                  "id": 7170,
                   "mutability": "mutable",
                   "name": "electionId",
-                  "nameLocation": "3169:10:2",
+                  "nameLocation": "3169:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1165,
-                  "src": "3153:26:2",
+                  "scope": 7176,
+                  "src": "3153:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3331,10 +3331,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1158,
+                    "id": 7169,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3153:6:2",
+                    "src": "3153:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3343,154 +3343,154 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3152:28:2"
+              "src": "3152:28:13"
             },
             "returnParameters": {
-              "id": 1164,
+              "id": 7175,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1163,
+                  "id": 7174,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1165,
-                  "src": "3204:15:2",
+                  "scope": 7176,
+                  "src": "3204:15:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Election_$1134_memory_ptr",
+                    "typeIdentifier": "t_struct$_Election_$7145_memory_ptr",
                     "typeString": "struct IElectionManager.Election"
                   },
                   "typeName": {
-                    "id": 1162,
+                    "id": 7173,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1161,
+                      "id": 7172,
                       "name": "Election",
                       "nameLocations": [
-                        "3204:8:2"
+                        "3204:8:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1134,
-                      "src": "3204:8:2"
+                      "referencedDeclaration": 7145,
+                      "src": "3204:8:13"
                     },
-                    "referencedDeclaration": 1134,
-                    "src": "3204:8:2",
+                    "referencedDeclaration": 7145,
+                    "src": "3204:8:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Election_$1134_storage_ptr",
+                      "typeIdentifier": "t_struct$_Election_$7145_storage_ptr",
                       "typeString": "struct IElectionManager.Election"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "3203:17:2"
+              "src": "3203:17:13"
             },
-            "scope": 1181,
-            "src": "3132:89:2",
+            "scope": 7192,
+            "src": "3132:89:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "5597f083",
-            "id": 1172,
+            "id": 7183,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getAllElection",
-            "nameLocation": "3236:14:2",
+            "nameLocation": "3236:14:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1166,
+              "id": 7177,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3250:2:2"
+              "src": "3250:2:13"
             },
             "returnParameters": {
-              "id": 1171,
+              "id": 7182,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1170,
+                  "id": 7181,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1172,
-                  "src": "3276:17:2",
+                  "scope": 7183,
+                  "src": "3276:17:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_Election_$1134_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_Election_$7145_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct IElectionManager.Election[]"
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1168,
+                      "id": 7179,
                       "nodeType": "UserDefinedTypeName",
                       "pathNode": {
-                        "id": 1167,
+                        "id": 7178,
                         "name": "Election",
                         "nameLocations": [
-                          "3276:8:2"
+                          "3276:8:13"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 1134,
-                        "src": "3276:8:2"
+                        "referencedDeclaration": 7145,
+                        "src": "3276:8:13"
                       },
-                      "referencedDeclaration": 1134,
-                      "src": "3276:8:2",
+                      "referencedDeclaration": 7145,
+                      "src": "3276:8:13",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_Election_$1134_storage_ptr",
+                        "typeIdentifier": "t_struct$_Election_$7145_storage_ptr",
                         "typeString": "struct IElectionManager.Election"
                       }
                     },
-                    "id": 1169,
+                    "id": 7180,
                     "nodeType": "ArrayTypeName",
-                    "src": "3276:10:2",
+                    "src": "3276:10:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_Election_$1134_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_Election_$7145_storage_$dyn_storage_ptr",
                       "typeString": "struct IElectionManager.Election[]"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "3275:19:2"
+              "src": "3275:19:13"
             },
-            "scope": 1181,
-            "src": "3227:68:2",
+            "scope": 7192,
+            "src": "3227:68:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
             "functionSelector": "df3cf749",
-            "id": 1180,
+            "id": 7191,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getElectionByNo",
-            "nameLocation": "3310:15:2",
+            "nameLocation": "3310:15:13",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1175,
+              "id": 7186,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1174,
+                  "id": 7185,
                   "mutability": "mutable",
                   "name": "electionNo",
-                  "nameLocation": "3342:10:2",
+                  "nameLocation": "3342:10:13",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1180,
-                  "src": "3326:26:2",
+                  "scope": 7191,
+                  "src": "3326:26:13",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -3498,10 +3498,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1173,
+                    "id": 7184,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3326:6:2",
+                    "src": "3326:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3510,66 +3510,66 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3325:28:2"
+              "src": "3325:28:13"
             },
             "returnParameters": {
-              "id": 1179,
+              "id": 7190,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1178,
+                  "id": 7189,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1180,
-                  "src": "3377:15:2",
+                  "scope": 7191,
+                  "src": "3377:15:13",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Election_$1134_memory_ptr",
+                    "typeIdentifier": "t_struct$_Election_$7145_memory_ptr",
                     "typeString": "struct IElectionManager.Election"
                   },
                   "typeName": {
-                    "id": 1177,
+                    "id": 7188,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1176,
+                      "id": 7187,
                       "name": "Election",
                       "nameLocations": [
-                        "3377:8:2"
+                        "3377:8:13"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1134,
-                      "src": "3377:8:2"
+                      "referencedDeclaration": 7145,
+                      "src": "3377:8:13"
                     },
-                    "referencedDeclaration": 1134,
-                    "src": "3377:8:2",
+                    "referencedDeclaration": 7145,
+                    "src": "3377:8:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Election_$1134_storage_ptr",
+                      "typeIdentifier": "t_struct$_Election_$7145_storage_ptr",
                       "typeString": "struct IElectionManager.Election"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "3376:17:2"
+              "src": "3376:17:13"
             },
-            "scope": 1181,
-            "src": "3301:93:2",
+            "scope": 7192,
+            "src": "3301:93:13",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1182,
-        "src": "2664:733:2",
+        "scope": 7193,
+        "src": "2664:733:13",
         "usedErrors": [],
         "usedEvents": []
       }
     ],
-    "src": "40:3359:2"
+    "src": "40:3359:13"
   },
   "compiler": {
     "name": "solc",
@@ -3577,7 +3577,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-06-19T05:01:48.472Z",
+  "updatedAt": "2025-06-19T07:26:11.397Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
