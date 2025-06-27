@@ -79,23 +79,23 @@ func (_m *KpuManagerInterface) DeactivateKPUProvinsi(opts *bind.TransactOpts, Ad
 }
 
 // GetAllKPUKota provides a mock function with given fields: opts
-func (_m *KpuManagerInterface) GetAllKPUKota(opts *bind.CallOpts) ([]kpuManager.IKPUManagerKPUKota, error) {
+func (_m *KpuManagerInterface) GetAllKPUKota(opts *bind.CallOpts) (*[]kpuManager.IKPUManagerKPUKota, error) {
 	ret := _m.Called(opts)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetAllKPUKota")
 	}
 
-	var r0 []kpuManager.IKPUManagerKPUKota
+	var r0 *[]kpuManager.IKPUManagerKPUKota
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts) ([]kpuManager.IKPUManagerKPUKota, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) (*[]kpuManager.IKPUManagerKPUKota, error)); ok {
 		return rf(opts)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts) []kpuManager.IKPUManagerKPUKota); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) *[]kpuManager.IKPUManagerKPUKota); ok {
 		r0 = rf(opts)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).([]kpuManager.IKPUManagerKPUKota)
+			r0 = ret.Get(0).(*[]kpuManager.IKPUManagerKPUKota)
 		}
 	}
 
@@ -109,23 +109,23 @@ func (_m *KpuManagerInterface) GetAllKPUKota(opts *bind.CallOpts) ([]kpuManager.
 }
 
 // GetAllKPUProvinsi provides a mock function with given fields: opts
-func (_m *KpuManagerInterface) GetAllKPUProvinsi(opts *bind.CallOpts) ([]kpuManager.IKPUManagerKPUProvinsi, error) {
+func (_m *KpuManagerInterface) GetAllKPUProvinsi(opts *bind.CallOpts) (*[]kpuManager.IKPUManagerKPUProvinsi, error) {
 	ret := _m.Called(opts)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetAllKPUProvinsi")
 	}
 
-	var r0 []kpuManager.IKPUManagerKPUProvinsi
+	var r0 *[]kpuManager.IKPUManagerKPUProvinsi
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts) ([]kpuManager.IKPUManagerKPUProvinsi, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) (*[]kpuManager.IKPUManagerKPUProvinsi, error)); ok {
 		return rf(opts)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts) []kpuManager.IKPUManagerKPUProvinsi); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) *[]kpuManager.IKPUManagerKPUProvinsi); ok {
 		r0 = rf(opts)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).([]kpuManager.IKPUManagerKPUProvinsi)
+			r0 = ret.Get(0).(*[]kpuManager.IKPUManagerKPUProvinsi)
 		}
 	}
 
@@ -139,22 +139,24 @@ func (_m *KpuManagerInterface) GetAllKPUProvinsi(opts *bind.CallOpts) ([]kpuMana
 }
 
 // GetKpuKotaByAddress provides a mock function with given fields: opts, Address
-func (_m *KpuManagerInterface) GetKpuKotaByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUKota, error) {
+func (_m *KpuManagerInterface) GetKpuKotaByAddress(opts *bind.CallOpts, Address common.Address) (*kpuManager.IKPUManagerKPUKota, error) {
 	ret := _m.Called(opts, Address)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetKpuKotaByAddress")
 	}
 
-	var r0 kpuManager.IKPUManagerKPUKota
+	var r0 *kpuManager.IKPUManagerKPUKota
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (kpuManager.IKPUManagerKPUKota, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (*kpuManager.IKPUManagerKPUKota, error)); ok {
 		return rf(opts, Address)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) kpuManager.IKPUManagerKPUKota); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) *kpuManager.IKPUManagerKPUKota); ok {
 		r0 = rf(opts, Address)
 	} else {
-		r0 = ret.Get(0).(kpuManager.IKPUManagerKPUKota)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*kpuManager.IKPUManagerKPUKota)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {
@@ -195,22 +197,24 @@ func (_m *KpuManagerInterface) GetKpuKotaRegion(opts *bind.CallOpts, kpuAddress 
 }
 
 // GetKpuProvinsiByAddress provides a mock function with given fields: opts, Address
-func (_m *KpuManagerInterface) GetKpuProvinsiByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUProvinsi, error) {
+func (_m *KpuManagerInterface) GetKpuProvinsiByAddress(opts *bind.CallOpts, Address common.Address) (*kpuManager.IKPUManagerKPUProvinsi, error) {
 	ret := _m.Called(opts, Address)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetKpuProvinsiByAddress")
 	}
 
-	var r0 kpuManager.IKPUManagerKPUProvinsi
+	var r0 *kpuManager.IKPUManagerKPUProvinsi
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (kpuManager.IKPUManagerKPUProvinsi, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (*kpuManager.IKPUManagerKPUProvinsi, error)); ok {
 		return rf(opts, Address)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) kpuManager.IKPUManagerKPUProvinsi); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) *kpuManager.IKPUManagerKPUProvinsi); ok {
 		r0 = rf(opts, Address)
 	} else {
-		r0 = ret.Get(0).(kpuManager.IKPUManagerKPUProvinsi)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*kpuManager.IKPUManagerKPUProvinsi)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {
@@ -279,22 +283,24 @@ func (_m *KpuManagerInterface) IsKPUProvinsi(opts *bind.CallOpts, kpuAddress com
 }
 
 // KpuKota provides a mock function with given fields: opts, addr
-func (_m *KpuManagerInterface) KpuKota(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUKota, error) {
+func (_m *KpuManagerInterface) KpuKota(opts *bind.CallOpts, addr common.Address) (*kpuManager.IKPUManagerKPUKota, error) {
 	ret := _m.Called(opts, addr)
 
 	if len(ret) == 0 {
 		panic("no return value specified for KpuKota")
 	}
 
-	var r0 kpuManager.IKPUManagerKPUKota
+	var r0 *kpuManager.IKPUManagerKPUKota
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (kpuManager.IKPUManagerKPUKota, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (*kpuManager.IKPUManagerKPUKota, error)); ok {
 		return rf(opts, addr)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) kpuManager.IKPUManagerKPUKota); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) *kpuManager.IKPUManagerKPUKota); ok {
 		r0 = rf(opts, addr)
 	} else {
-		r0 = ret.Get(0).(kpuManager.IKPUManagerKPUKota)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*kpuManager.IKPUManagerKPUKota)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {
@@ -307,22 +313,24 @@ func (_m *KpuManagerInterface) KpuKota(opts *bind.CallOpts, addr common.Address)
 }
 
 // KpuProvinsi provides a mock function with given fields: opts, addr
-func (_m *KpuManagerInterface) KpuProvinsi(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUProvinsi, error) {
+func (_m *KpuManagerInterface) KpuProvinsi(opts *bind.CallOpts, addr common.Address) (*kpuManager.IKPUManagerKPUProvinsi, error) {
 	ret := _m.Called(opts, addr)
 
 	if len(ret) == 0 {
 		panic("no return value specified for KpuProvinsi")
 	}
 
-	var r0 kpuManager.IKPUManagerKPUProvinsi
+	var r0 *kpuManager.IKPUManagerKPUProvinsi
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (kpuManager.IKPUManagerKPUProvinsi, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) (*kpuManager.IKPUManagerKPUProvinsi, error)); ok {
 		return rf(opts, addr)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) kpuManager.IKPUManagerKPUProvinsi); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, common.Address) *kpuManager.IKPUManagerKPUProvinsi); ok {
 		r0 = rf(opts, addr)
 	} else {
-		r0 = ret.Get(0).(kpuManager.IKPUManagerKPUProvinsi)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*kpuManager.IKPUManagerKPUProvinsi)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, common.Address) error); ok {

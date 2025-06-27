@@ -17,20 +17,36 @@ func NewElectionManagerAdapter(manager *electionManager.ElectionManager) interfa
 	}
 }
 
-func (e *ElectionManagerAdapter) GetElectionByNo(opts *bind.CallOpts, electionNo string) (electionManager.IElectionManagerElection, error) {
-	return e.manager.GetElectionByNo(opts, electionNo)
+func (e *ElectionManagerAdapter) GetElectionByNo(opts *bind.CallOpts, electionNo string) (*electionManager.IElectionManagerElection, error) {
+	election, err := e.manager.GetElectionByNo(opts, electionNo)
+	if err != nil {
+		return nil, err
+	}
+	return &election, nil
 }
 
-func (e *ElectionManagerAdapter) Elections(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error) {
-	return e.manager.Elections(opts, electionId)
+func (e *ElectionManagerAdapter) Elections(opts *bind.CallOpts, electionId string) (*electionManager.IElectionManagerElection, error) {
+	election, err := e.manager.Elections(opts, electionId)
+	if err != nil {
+		return nil, err
+	}
+	return &election, nil
 }
 
-func (e *ElectionManagerAdapter) GetElection(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error) {
-	return e.manager.GetElection(opts, electionId)
+func (e *ElectionManagerAdapter) GetElection(opts *bind.CallOpts, electionId string) (*electionManager.IElectionManagerElection, error) {
+	election, err := e.manager.GetElection(opts, electionId)
+	if err != nil {
+		return nil, err
+	}
+	return &election, nil
 }
 
-func (e *ElectionManagerAdapter) GetAllElection(opts *bind.CallOpts) ([]electionManager.IElectionManagerElection, error) {
-	return e.manager.GetAllElection(opts)
+func (e *ElectionManagerAdapter) GetAllElection(opts *bind.CallOpts) (*[]electionManager.IElectionManagerElection, error) {
+	elections, err := e.manager.GetAllElection(opts)
+	if err != nil {
+		return nil, err
+	}
+	return &elections, nil
 }
 
 func (e *ElectionManagerAdapter) AddElection(opts *bind.TransactOpts, electionId string, electionNo string) (*types.Transaction, error) {

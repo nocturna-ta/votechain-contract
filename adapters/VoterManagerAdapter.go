@@ -18,8 +18,13 @@ func NewVoterManagerAdapter(manager *voterManager.VoterManager) interfaces.Voter
 	}
 }
 
-func (v *VoterManagerAdapter) GetVoterByAddress(opts *bind.CallOpts, voterAddress common.Address) (voterManager.IVoterManagerVoter, error) {
-	return v.manager.GetVoterByAddress(opts, voterAddress)
+func (v *VoterManagerAdapter) GetVoterByAddress(opts *bind.CallOpts, voterAddress common.Address) (*voterManager.IVoterManagerVoter, error) {
+	voter, err := v.manager.GetVoterByAddress(opts, voterAddress)
+	if err != nil {
+		return nil, err
+	}
+
+	return &voter, nil
 }
 
 func (v *VoterManagerAdapter) GetVoterNikByAddress(opts *bind.CallOpts, voterAddress common.Address) (string, error) {
@@ -46,18 +51,37 @@ func (v *VoterManagerAdapter) VoterNIKByAddresses(opts *bind.CallOpts, arg0 comm
 	return v.manager.VoterNIKByAddresses(opts, arg0)
 }
 
-func (v *VoterManagerAdapter) Voters(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error) {
-	return v.manager.Voters(opts, nik)
+func (v *VoterManagerAdapter) Voters(opts *bind.CallOpts, nik string) (*voterManager.IVoterManagerVoter, error) {
+	voter, err := v.manager.Voters(opts, nik)
+	if err != nil {
+		return nil, err
+	}
+
+	return &voter, nil
 }
 
-func (v *VoterManagerAdapter) GetAllVoter(opts *bind.CallOpts) ([]voterManager.IVoterManagerVoter, error) {
-	return v.manager.GetAllVoter(opts)
+func (v *VoterManagerAdapter) GetAllVoter(opts *bind.CallOpts) (*[]voterManager.IVoterManagerVoter, error) {
+	voters, err := v.manager.GetAllVoter(opts)
+	if err != nil {
+		return nil, err
+	}
+
+	return &voters, nil
 }
 
-func (v *VoterManagerAdapter) GetVoterByNIK(opts *bind.CallOpts, nik string) (voterManager.IVoterManagerVoter, error) {
-	return v.manager.GetVoterByNIK(opts, nik)
+func (v *VoterManagerAdapter) GetVoterByNIK(opts *bind.CallOpts, nik string) (*voterManager.IVoterManagerVoter, error) {
+	voter, err := v.manager.GetVoterByNIK(opts, nik)
+	if err != nil {
+		return nil, err
+	}
+
+	return &voter, nil
 }
 
-func (v *VoterManagerAdapter) GetVoterByRegion(opts *bind.CallOpts, region string) ([]voterManager.IVoterManagerVoter, error) {
-	return v.manager.GetVoterByRegion(opts, region)
+func (v *VoterManagerAdapter) GetVoterByRegion(opts *bind.CallOpts, region string) (*[]voterManager.IVoterManagerVoter, error) {
+	voters, err := v.manager.GetVoterByRegion(opts, region)
+	if err != nil {
+		return nil, err
+	}
+	return &voters, nil
 }

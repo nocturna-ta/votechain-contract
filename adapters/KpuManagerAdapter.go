@@ -46,28 +46,54 @@ func (k *KpuManagerAdapter) DeactivateKPUProvinsi(opts *bind.TransactOpts, Addre
 	return k.manager.DeactivateKPUProvinsi(opts, Address)
 }
 
-func (k *KpuManagerAdapter) GetAllKPUKota(opts *bind.CallOpts) ([]kpuManager.IKPUManagerKPUKota, error) {
-	return k.manager.GetAllKPUKota(opts)
+func (k *KpuManagerAdapter) GetAllKPUKota(opts *bind.CallOpts) (*[]kpuManager.IKPUManagerKPUKota, error) {
+	kpu, err := k.manager.GetAllKPUKota(opts)
+	if err != nil {
+		return nil, err
+	}
+	return &kpu, nil
 }
 
-func (k *KpuManagerAdapter) GetAllKPUProvinsi(opts *bind.CallOpts) ([]kpuManager.IKPUManagerKPUProvinsi, error) {
-	return k.manager.GetAllKPUProvinsi(opts)
+func (k *KpuManagerAdapter) GetAllKPUProvinsi(opts *bind.CallOpts) (*[]kpuManager.IKPUManagerKPUProvinsi, error) {
+	kpu, err := k.manager.GetAllKPUProvinsi(opts)
+	if err != nil {
+		return nil, err
+	}
+	return &kpu, nil
 }
 
-func (k *KpuManagerAdapter) GetKpuKotaByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUKota, error) {
-	return k.manager.GetKpuKotaByAddress(opts, Address)
+func (k *KpuManagerAdapter) GetKpuKotaByAddress(opts *bind.CallOpts, Address common.Address) (*kpuManager.IKPUManagerKPUKota, error) {
+	kpu, err := k.manager.GetKpuKotaByAddress(opts, Address)
+	if err != nil {
+		return nil, err
+	}
+	return &kpu, nil
 }
 
-func (k *KpuManagerAdapter) GetKpuProvinsiByAddress(opts *bind.CallOpts, Address common.Address) (kpuManager.IKPUManagerKPUProvinsi, error) {
-	return k.manager.GetKpuProvinsiByAddress(opts, Address)
+func (k *KpuManagerAdapter) GetKpuProvinsiByAddress(opts *bind.CallOpts, Address common.Address) (*kpuManager.IKPUManagerKPUProvinsi, error) {
+	kpu, err := k.manager.GetKpuProvinsiByAddress(opts, Address)
+	if err != nil {
+		return nil, err
+	}
+	return &kpu, nil
 }
 
-func (k *KpuManagerAdapter) KpuKota(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUKota, error) {
-	return k.manager.KpuKota(opts, addr)
+func (k *KpuManagerAdapter) KpuKota(opts *bind.CallOpts, addr common.Address) (*kpuManager.IKPUManagerKPUKota, error) {
+	kpu, err := k.manager.KpuKota(opts, addr)
+	if err != nil {
+		return nil, err
+	}
+
+	return &kpu, nil
 }
 
-func (k *KpuManagerAdapter) KpuProvinsi(opts *bind.CallOpts, addr common.Address) (kpuManager.IKPUManagerKPUProvinsi, error) {
-	return k.manager.KpuProvinsi(opts, addr)
+func (k *KpuManagerAdapter) KpuProvinsi(opts *bind.CallOpts, addr common.Address) (*kpuManager.IKPUManagerKPUProvinsi, error) {
+	kpu, err := k.manager.KpuProvinsi(opts, addr)
+	if err != nil {
+		return nil, err
+	}
+
+	return &kpu, nil
 }
 
 func (k *KpuManagerAdapter) UpdateKPUProvinsi(opts *bind.TransactOpts, Address common.Address, name string, region string) (*types.Transaction, error) {

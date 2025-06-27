@@ -47,22 +47,24 @@ func (_m *ElectionManagerInterface) AddElection(opts *bind.TransactOpts, electio
 }
 
 // Elections provides a mock function with given fields: opts, electionId
-func (_m *ElectionManagerInterface) Elections(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error) {
+func (_m *ElectionManagerInterface) Elections(opts *bind.CallOpts, electionId string) (*electionManager.IElectionManagerElection, error) {
 	ret := _m.Called(opts, electionId)
 
 	if len(ret) == 0 {
 		panic("no return value specified for Elections")
 	}
 
-	var r0 electionManager.IElectionManagerElection
+	var r0 *electionManager.IElectionManagerElection
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (electionManager.IElectionManagerElection, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (*electionManager.IElectionManagerElection, error)); ok {
 		return rf(opts, electionId)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) electionManager.IElectionManagerElection); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) *electionManager.IElectionManagerElection); ok {
 		r0 = rf(opts, electionId)
 	} else {
-		r0 = ret.Get(0).(electionManager.IElectionManagerElection)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*electionManager.IElectionManagerElection)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
@@ -75,23 +77,23 @@ func (_m *ElectionManagerInterface) Elections(opts *bind.CallOpts, electionId st
 }
 
 // GetAllElection provides a mock function with given fields: opts
-func (_m *ElectionManagerInterface) GetAllElection(opts *bind.CallOpts) ([]electionManager.IElectionManagerElection, error) {
+func (_m *ElectionManagerInterface) GetAllElection(opts *bind.CallOpts) (*[]electionManager.IElectionManagerElection, error) {
 	ret := _m.Called(opts)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetAllElection")
 	}
 
-	var r0 []electionManager.IElectionManagerElection
+	var r0 *[]electionManager.IElectionManagerElection
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts) ([]electionManager.IElectionManagerElection, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) (*[]electionManager.IElectionManagerElection, error)); ok {
 		return rf(opts)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts) []electionManager.IElectionManagerElection); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts) *[]electionManager.IElectionManagerElection); ok {
 		r0 = rf(opts)
 	} else {
 		if ret.Get(0) != nil {
-			r0 = ret.Get(0).([]electionManager.IElectionManagerElection)
+			r0 = ret.Get(0).(*[]electionManager.IElectionManagerElection)
 		}
 	}
 
@@ -105,22 +107,24 @@ func (_m *ElectionManagerInterface) GetAllElection(opts *bind.CallOpts) ([]elect
 }
 
 // GetElection provides a mock function with given fields: opts, electionId
-func (_m *ElectionManagerInterface) GetElection(opts *bind.CallOpts, electionId string) (electionManager.IElectionManagerElection, error) {
+func (_m *ElectionManagerInterface) GetElection(opts *bind.CallOpts, electionId string) (*electionManager.IElectionManagerElection, error) {
 	ret := _m.Called(opts, electionId)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetElection")
 	}
 
-	var r0 electionManager.IElectionManagerElection
+	var r0 *electionManager.IElectionManagerElection
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (electionManager.IElectionManagerElection, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (*electionManager.IElectionManagerElection, error)); ok {
 		return rf(opts, electionId)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) electionManager.IElectionManagerElection); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) *electionManager.IElectionManagerElection); ok {
 		r0 = rf(opts, electionId)
 	} else {
-		r0 = ret.Get(0).(electionManager.IElectionManagerElection)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*electionManager.IElectionManagerElection)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
@@ -133,22 +137,24 @@ func (_m *ElectionManagerInterface) GetElection(opts *bind.CallOpts, electionId 
 }
 
 // GetElectionByNo provides a mock function with given fields: opts, electionNo
-func (_m *ElectionManagerInterface) GetElectionByNo(opts *bind.CallOpts, electionNo string) (electionManager.IElectionManagerElection, error) {
+func (_m *ElectionManagerInterface) GetElectionByNo(opts *bind.CallOpts, electionNo string) (*electionManager.IElectionManagerElection, error) {
 	ret := _m.Called(opts, electionNo)
 
 	if len(ret) == 0 {
 		panic("no return value specified for GetElectionByNo")
 	}
 
-	var r0 electionManager.IElectionManagerElection
+	var r0 *electionManager.IElectionManagerElection
 	var r1 error
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (electionManager.IElectionManagerElection, error)); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) (*electionManager.IElectionManagerElection, error)); ok {
 		return rf(opts, electionNo)
 	}
-	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) electionManager.IElectionManagerElection); ok {
+	if rf, ok := ret.Get(0).(func(*bind.CallOpts, string) *electionManager.IElectionManagerElection); ok {
 		r0 = rf(opts, electionNo)
 	} else {
-		r0 = ret.Get(0).(electionManager.IElectionManagerElection)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*electionManager.IElectionManagerElection)
+		}
 	}
 
 	if rf, ok := ret.Get(1).(func(*bind.CallOpts, string) error); ok {
